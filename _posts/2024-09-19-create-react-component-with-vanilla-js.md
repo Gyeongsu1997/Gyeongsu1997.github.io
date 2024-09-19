@@ -33,8 +33,6 @@ npm install --save-dev @babel/core @babel/cli @babel/plugin-transform-react-jsx
 
 다음으로 babel.config.json파일을 만들어 플러그인 설정을 합니다.
 
-- babel.config.json
-
 ```json
 {
 	"plugins": ["@babel/plugin-transform-react-jsx"]
@@ -124,6 +122,19 @@ function h(type, props, ...children) {
 
 <script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=package.json"></script>
 
+2. React와 ReactDOM
+
+VirtualDOM을 만들어주는 함수를 h라는 이름 대신 React.createElement라는 이름으로 만들어주겠습니다.
+
+- src/core/react.js
+
+<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=react.js"></script>
+
+react-dom.js는 루트 엘리먼트와 루트 컴포넌트를 설정하고 처음으로 렌더링하는 역할을 합니다.
+
+- src/core/react-dom.js
+
+<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=react-dom.js"></script>
 
 가장 먼저 필요한 것은 Virtual DOM을 실제 DOM으로 만들어주는 것입니다.
 
