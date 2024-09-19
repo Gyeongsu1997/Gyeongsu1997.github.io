@@ -81,7 +81,7 @@ function h(type, props, ...children) {
 
 ## 함수형 컴포넌트 만들기
 
-1. 폴더 구조
+### (1) 폴더 구조
 
 다음과 같은 구조로 폴더를 구성해보겠습니다.
 
@@ -122,7 +122,7 @@ function h(type, props, ...children) {
 
 <script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=package.json"></script>
 
-2. React와 ReactDOM
+### (2) Entry Point
 
 VirtualDOM을 만들어주는 함수를 h라는 이름 대신 React.createElement라는 이름으로 만들어주겠습니다.
 
@@ -136,23 +136,36 @@ react-dom.js는 루트 엘리먼트와 루트 컴포넌트를 설정하고 처�
 
 <script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=react-dom.js"></script>
 
-가장 먼저 필요한 것은 Virtual DOM을 실제 DOM으로 만들어주는 것입니다.
+- src/index.js
+
+<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=index.js"></script>
+
+### (3) Virtual DOM -> Real DOM
+
+- src/core/internal/root.js
+
+<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=root.js"></script>
+
+root.js에서 $root은 실제 DOM의 element이고, rootComponent는 Virtual DOM입니다. 따라서 Virtual DOM을 실제 DOM의 element로 만들어주는 과정이 필요합니다. 이를 위해 dom.js에 _createElement라는 함수를 만들었습니다.
 
 - src/core/internal/dom.js
 
 <script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=dom.js"></script>
 
-_createElement 함수는 아래와 같은 형태의 Virtual DOM을 인자로 받아 실제 DOM의 element를 만들어 반환합니다.
+핵심적인 부분은 node의 type이 함수라면 props와 children을 담은 객체를 인자로 하여 해당 함수를 호출하고, 그 반환값을 다시 _createElement에 재귀적으로 전달하는 것입니다.
 
-```js
-{
-  type: [Function (anonymous)],
-  props: null,
-  children: [
-    { type: [Function (anonymous)], props: null, children: [Array] },
-    { type: 'p', props: null, children: [Array] }
-  ]
-}
-```
+### (4) 함수형 컴포넌트
+
+코어 로직은 완성되었습니다. 이제 함수형 컴포넌트를 사용할 수 있습니다. 우리가 만든 함수형 컴포넌트는 위에서 전달한 props를 인자로 받을 수 있습니다. children prop을 사용하여 Composition을 사용해 보겠습니다.
+
+- src/components/Header.js
+
+<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=Header.js"></script>
+
+- src/components/Article.js
+
+<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=Article.js"></script>
+
+
 
 
