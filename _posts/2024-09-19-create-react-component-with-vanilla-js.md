@@ -36,5 +36,32 @@ npm install --save-dev @babel/core @babel/cli @babel/plugin-transform-react-jsx
 <script src="https://gist.github.com/Gyeongsu1997/4b224f6f158c792ff199d6e52d256c7b.js?file=babel.config.json"></script>
 
 
+src 디렉토리의 파일을 컴파일한 결과가 lib 디렉토리에 생성되게 하려면 CLI에서 아래 명령어를 입력하면 됩니다. package.json 파일에 scripts로 등록해 놓고 사용하면 편리합니다.
 
+```
+npx babel src --out-dir lib
+```
 
+이것으로 환경 설정은 모두 끝났습니다. 하지만 JSX 문법으로 작성된 파일을 컴파일하기 위해서는 아래와 같은 시그니처를 갖는 함수가 필요합니다. 이 함수의 역할은 Virtual DOM을 만들어주는 역할을 합니다.
+
+```js
+function h(type, props, ...children) {
+	return { type, props, children: children.flat() };
+}
+```
+
+또한, 컴파일할 파일 상단에 다음과 같은 주석을 달아 주어야 합니다.
+
+```js
+/** @jsx h */
+```
+
+아래처럼 사용할 수 있습니다.
+
+<script src="https://gist.github.com/Gyeongsu1997/4b224f6f158c792ff199d6e52d256c7b.js?file=MyComponent.jsx"></script>
+
+위 파일을 컴파일한 결과는 아래와 같습니다.
+
+<script src="https://gist.github.com/Gyeongsu1997/4b224f6f158c792ff199d6e52d256c7b.js?file=MyComponent.js"></script>
+
+여기서 주목할만한 점이 있습니다. 바로 Wrapper, Title 같은 변수가 h 함수에 첫 번째 인자로 전달된다는 것입니다. 만약 이 변수가 함수라면, 이 함수에 props와 children을 인자로 넣어 호출해준다면 React의 함수형 컴포넌트를 만들 수 있지 않을까라는 생각이 들었습니다.
