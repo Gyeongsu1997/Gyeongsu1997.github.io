@@ -140,7 +140,7 @@ ReactDOM.render 함수는 루트 엘리먼트와 루트 컴포넌트를 설정�
 
 <script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=react-dom.js"></script>
 
-### (4) Virtual DOM을 실제 DOM으로 만들기
+### (4) Virtual DOM을 실제 DOM으로
 
 root.js는 루트 엘리먼트와 루트 컴포넌트를 변수로 가지고 있습니다.
 
@@ -168,7 +168,7 @@ Article 컴포넌트는 title, author, content를 props로 받아 렌더링합�
 
 - src/components/Article.js
 
-<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.jsfile=Article.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=Article.js"></script>
 
 ArticleList 컴포넌트는 props로 전달받은 배열을 순회하며 Article 컴포넌트를 렌더링합니다.
 
