@@ -77,7 +77,7 @@ function h(type, props, ...children) {
 
 <script src="https://gist.github.com/Gyeongsu1997/4b224f6f158c792ff199d6e52d256c7b.js?file=MyComponent.js"></script>
 
-여기서 주목할만한 점이 있습니다. 바로 Wrapper, Title 같은 변수가 h 함수에 첫 번째 인자로 전달된다는 것입니다. 만약 이 변수가 함수라면, 이 함수에 props와 children을 인자로 넣어 호출해준다면 React의 함수형 컴포넌트를 만들 수 있지 않을까라고 생각했습니다.
+여기서 주목할만한 점이 있습니다. 바로 Wrapper, Title 같은 변수가 h 함수에 첫 번째 인자로 전달된다는 것입니다. 만약 이 변수가 함수라면, 이 함수에 props와 children을 인자로 넣어 호출해 준다면 React의 함수형 컴포넌트를 만들 수 있지 않을까라고 생각했습니다.
 
 ## 함수형 컴포넌트 만들기
 
@@ -134,15 +134,15 @@ VirtualDOM을 만들어주는 함수를 h라는 이름 대신 React.createElemen
 
 <script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=react.js"></script>
 
-react-dom.js는 루트 엘리먼트와 루트 컴포넌트를 설정하고 처음으로 렌더링하는 역할을 합니다.
+ReactDOM.render 함수는 루트 엘리먼트와 루트 컴포넌트를 설정하고 처음으로 렌더링하는 역할을 합니다.
 
 - src/core/react-dom.js
 
 <script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=react-dom.js"></script>
 
-### (4) Virtual DOM을 실제 DOM으로
+### (4) Virtual DOM을 실제 DOM으로 만들기
 
-root.js는 루트 엘리먼트와 루트 컴포넌트를 관리합니다.
+root.js는 루트 엘리먼트와 루트 컴포넌트를 변수로 가지고 있습니다.
 
 - src/core/internal/root.js
 
@@ -170,7 +170,7 @@ Article 컴포넌트는 title, author, content를 props로 받아 렌더링합�
 
 <script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=Article.js"></script>
 
-ArticleList 컴포넌트는 props로 전달받은 배열의 길이만큼 Article 컴포넌트를 렌더링합니다.
+ArticleList 컴포넌트는 props로 전달받은 배열을 순회하며 Article 컴포넌트를 렌더링합니다.
 
 - src/components/ArticleList.js
 
@@ -212,6 +212,13 @@ index.js는 루트 엘리먼트 아래에 App 컴포넌트를 렌더링합니다
     │   └── react.js
     └── index.js
 ```
+
+<iframe src="https://codesandbox.io/embed/8skfrc?view=preview&hidenavigation=1"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="function-components"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 
 
