@@ -11,15 +11,15 @@ title:  "바닐라 자바스크립트로 리액트 함수형 컴포넌트 만들
 
 - index.html
 
-<script src="https://gist.github.com/Gyeongsu1997/4b224f6f158c792ff199d6e52d256c7b.js?file=index.html"></script>
+<script src="https://gist.github.com/Gyeongsu1997/514e5909c3bb1e8b7116b2d39868b346.js?file=index.html"></script>
 
 - MyElement.js
 
-<script src="https://gist.github.com/Gyeongsu1997/4b224f6f158c792ff199d6e52d256c7b.js?file=MyElement.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/514e5909c3bb1e8b7116b2d39868b346.js?file=MyElement.js"></script>
 
 - StyledComponents.js
 
-<script src="https://gist.github.com/Gyeongsu1997/4b224f6f158c792ff199d6e52d256c7b.js?file=StyledComponents.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/514e5909c3bb1e8b7116b2d39868b346.js?file=StyledComponents.js"></script>
 
 순수한 자바스크립트 파일에서는 JSX 문법을 사용할 수 없어 템플릿 리터럴을 중첩해 사용하는 것에 불편을 느끼던 와중에 JSX 문법을 컴파일 해주는 babel이라는 도구를 발견했습니다.
 
@@ -47,7 +47,7 @@ npx babel src --out-dir lib
 
 package.json 파일에 scripts로 등록해 놓고 사용하면 편리합니다.
 
-```
+```json
 {
   "scripts": {
     "build": "npx babel src --out-dir lib"
@@ -71,11 +71,11 @@ function h(type, props, ...children) {
 
 아래처럼 사용할 수 있습니다.
 
-<script src="https://gist.github.com/Gyeongsu1997/4b224f6f158c792ff199d6e52d256c7b.js?file=MyComponent.jsx"></script>
+<script src="https://gist.github.com/Gyeongsu1997/514e5909c3bb1e8b7116b2d39868b346.js?file=MyComponent.jsx"></script>
 
 위 파일을 컴파일한 결과는 아래와 같습니다.
 
-<script src="https://gist.github.com/Gyeongsu1997/4b224f6f158c792ff199d6e52d256c7b.js?file=MyComponent.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/514e5909c3bb1e8b7116b2d39868b346.js?file=MyComponent.js"></script>
 
 여기서 주목할만한 점이 있습니다. 바로 Wrapper, Title 같은 변수가 h 함수에 첫 번째 인자로 전달된다는 것입니다. 만약 이 변수가 함수라면, 이 함수에 props와 children을 인자로 넣어 호출해 준다면 React의 함수형 컴포넌트를 만들 수 있지 않을까라고 생각했습니다.
 
