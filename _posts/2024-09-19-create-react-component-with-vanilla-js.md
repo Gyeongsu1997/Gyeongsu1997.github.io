@@ -112,19 +112,19 @@ function h(type, props, ...children) {
 
 - package.json
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=package.json"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=package.json"></script>
 
 - babel.config.json
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=babel.config.json"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=babel.config.json"></script>
 
 - index.html
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=index.html"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=index.html"></script>
 
 - static/css/index.css
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=index.css"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=index.css"></script>
 
 ### (3) React와 ReactDOM
 
@@ -132,13 +132,13 @@ VirtualDOM을 만들어주는 함수를 h라는 이름 대신 React.createElemen
 
 - src/core/react.js
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=react.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=react.js"></script>
 
 ReactDOM.render 함수는 루트 엘리먼트와 루트 컴포넌트를 설정하고 처음으로 렌더링하는 역할을 합니다.
 
 - src/core/react-dom.js
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=react-dom.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=react-dom.js"></script>
 
 ### (4) Virtual DOM을 실제 DOM으로 만들기
 
@@ -146,13 +146,13 @@ root.js는 루트 엘리먼트와 루트 컴포넌트를 변수로 가지고 있
 
 - src/core/internal/root.js
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=root.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=root.js"></script>
 
 여기서 $root은 실제 DOM의 element이고, rootComponent는 Virtual DOM입니다. 따라서 Virtual DOM을 실제 DOM의 element로 만들어주는 과정이 필요합니다. 이를 위해 dom.js에 _createElement라는 함수를 만들었습니다.
 
 - src/core/internal/dom.js
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=dom.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=dom.js"></script>
 
 핵심적인 부분은 node의 type이 함수라면 props와 children을 담은 객체를 인자로 하여 해당 함수를 호출하고, 그 반환값을 다시 _createElement에 재귀적으로 전달하는 것입니다.
 
@@ -162,19 +162,19 @@ root.js는 루트 엘리먼트와 루트 컴포넌트를 변수로 가지고 있
 
 - src/components/Header.js
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=Header.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=Header.js"></script>
 
 Article 컴포넌트는 title, author, content를 props로 받아 렌더링합니다.
 
 - src/components/Article.js
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=Article.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.jsfile=Article.js"></script>
 
 ArticleList 컴포넌트는 props로 전달받은 배열을 순회하며 Article 컴포넌트를 렌더링합니다.
 
 - src/components/ArticleList.js
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=ArticleList.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=ArticleList.js"></script>
 
 ### (6) Entry Point
 
@@ -182,13 +182,13 @@ App 컴포넌트는 위에서 만든 Header 컴포넌트와 ArticleList 컴포�
 
 - src/App.js
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=App.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=App.js"></script>
 
 index.js는 루트 엘리먼트 아래에 App 컴포넌트를 렌더링합니다.
 
 - src/index.js
 
-<script src="https://gist.github.com/Gyeongsu1997/405c8ae383bda9bcf5a36ec256682574.js?file=index.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=index.js"></script>
 
 ### (7) 빌드 및 실행
 
