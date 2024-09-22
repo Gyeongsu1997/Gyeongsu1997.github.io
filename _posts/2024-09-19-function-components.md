@@ -1,9 +1,10 @@
 ---
 layout: single
 title:  "바닐라 자바스크립트로 리액트 함수형 컴포넌트 만들기"
+toc: true
 category: Vanilla JS
 tags:
-  - javascript
+  - JavaScript
 ---
 
 <div class="notice--info">
