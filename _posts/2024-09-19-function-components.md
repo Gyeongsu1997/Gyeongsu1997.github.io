@@ -3,7 +3,7 @@ layout: single
 title:  "바닐라 자바스크립트로 리액트 함수형 컴포넌트 만들기"
 ---
 
-부스트캠프에서 마스터로 활동하고 계신 황준일님이 쓰신 [게시글](https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Virtual-DOM/)을 먼저 읽고 읽으면 이해하기 수월합니다.
+부스트캠프에서 마스터로 활동하고 계신 황준일님이 쓰신 [게시글](https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Virtual-DOM/){:target="_blank"}을 먼저 읽고 읽으면 이해하기 수월합니다.
 
 ## 개발 배경
 
@@ -25,7 +25,7 @@ title:  "바닐라 자바스크립트로 리액트 함수형 컴포넌트 만들
 
 ## babel을 이용한 컴파일
 
-babel을 사용해 JSX 문법을 컴파일하기 위해서는 @babel/plugin-transform-react-jsx라는 플러그인을 사용합니다. 자세한 내용은 [여기](https://babeljs.io/docs/babel-plugin-transform-react-jsx#with-a-configuration-file-recommended)에서 보실 수 있지만 간략하게 정리하고 넘어가겠습니다. 우선, 아래와 같은 명령어로 npm 패키지를 설치해야 합니다.
+babel을 사용해 JSX 문법을 컴파일하기 위해서는 @babel/plugin-transform-react-jsx라는 플러그인을 사용합니다. 자세한 내용은 [여기](https://babeljs.io/docs/babel-plugin-transform-react-jsx#with-a-configuration-file-recommended){:target="_blank"}에서 보실 수 있지만 간략하게 정리하고 넘어가겠습니다. 우선, 아래와 같은 명령어로 npm 패키지를 설치해야 합니다.
 
 ```
 npm install --save-dev @babel/core @babel/cli @babel/plugin-transform-react-jsx
