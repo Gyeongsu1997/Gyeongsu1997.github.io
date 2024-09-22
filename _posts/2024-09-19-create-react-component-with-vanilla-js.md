@@ -134,7 +134,7 @@ VirtualDOM을 만들어주는 함수를 h라는 이름 대신 React.createElemen
 
 <script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=react.js"></script>
 
-ReactDOM.render 함수는 루트 엘리먼트와 루트 컴포넌트를 설정하고 처음으로 렌더링하는 역할을 합니다.
+ReactDOM.render 함수는 루트 엘리먼트와 루트 컴포넌트를 설정하고 처음으로 렌더링을 합니다.
 
 - src/core/react-dom.js
 
@@ -184,7 +184,7 @@ App 컴포넌트는 위에서 만든 Header 컴포넌트와 ArticleList 컴포�
 
 <script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=App.js"></script>
 
-index.js는 루트 엘리먼트 아래에 App 컴포넌트를 렌더링합니다.
+index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 루트 컴포넌트를 전달합니다.
 
 - src/index.js
 
@@ -192,7 +192,7 @@ index.js는 루트 엘리먼트 아래에 App 컴포넌트를 렌더링합니다
 
 ### (7) 빌드 및 실행
 
-<b>npm run build</b> 명령어를 실행하면 아래와 같이 static 폴더 아래의 js 폴더에 컴파일된 파일들이 생성됩니다.
+터미널에서 <b>npm run build</b> 명령어를 입력하면 아래와 같이 static 폴더 아래에 컴파일된 자바스크립트 파일들이 생성됩니다.
 
 ```
 .
@@ -212,6 +212,8 @@ index.js는 루트 엘리먼트 아래에 App 컴포넌트를 렌더링합니다
     │   └── react.js
     └── index.js
 ```
+
+실행 화면입니다.
 
 <iframe src="https://codesandbox.io/embed/8skfrc?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
