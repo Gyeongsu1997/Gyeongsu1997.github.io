@@ -7,7 +7,13 @@ tags:
 toc: true
 ---
 
-## 개발 배경
+<div class="notice--info">
+  <h4>
+    부스트캠프에서 마스터로 활동하고 계신 황준일님이 쓰신 <a href="https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Virtual-DOM/" target="_blank">Vanilla Javascript로 가상돔(VirtualDOM) 만들기</a>를 먼저 읽고 읽으면 이해하기 수월합니다.
+  </h4>
+</div>
+
+## 1. 개발 배경
 
 바닐라 자바스크립트로 프로젝트를 수행하게 되어 Web Components에 styled-components를 모방한 방식으로 스타일을 적용하여 아래와 같이 사용하고 있었습니다.
 
@@ -25,7 +31,7 @@ toc: true
 
 순수한 자바스크립트 파일에서는 JSX 문법을 사용할 수 없어 템플릿 리터럴을 중첩해 사용하는 것에 불편을 느끼던 와중에 JSX 문법을 컴파일 해주는 babel이라는 도구를 발견했습니다.
 
-## babel을 이용한 컴파일
+## 2. babel을 이용한 컴파일
 
 babel을 사용해 JSX 문법을 컴파일하기 위해서는 @babel/plugin-transform-react-jsx라는 플러그인을 사용합니다. 자세한 내용은 [여기](https://babeljs.io/docs/babel-plugin-transform-react-jsx#with-a-configuration-file-recommended){:target="_blank"}에서 보실 수 있지만 간략하게 정리하고 넘어가겠습니다. 우선, 아래와 같은 명령어로 npm 패키지를 설치해야 합니다.
 
@@ -81,7 +87,7 @@ function h(type, props, ...children) {
 
 여기서 주목할만한 점이 있습니다. 바로 Wrapper, Title 같은 변수가 h 함수에 첫 번째 인자로 전달된다는 것입니다. 만약 이 변수가 함수라면, 이 함수에 props와 children을 인자로 넣어 호출해 준다면 React의 함수형 컴포넌트를 만들 수 있지 않을까라고 생각했습니다.
 
-## 함수형 컴포넌트 만들기
+## 3. 함수형 컴포넌트 만들기
 
 ### (1) 폴더 구조
 
@@ -240,6 +246,8 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+
+## Reference
 
 
 
