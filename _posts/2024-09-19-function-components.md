@@ -1,11 +1,12 @@
 ---
 layout: single
 title:  "바닐라 자바스크립트로 리액트 함수형 컴포넌트 만들기"
+category: Vanilla JS
 ---
 
 <div class="notice--info">
   <h4>
-    부스트캠프에서 마스터로 활동하고 계신 황준일님이 쓰신 <a href="https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Virtual-DOM/" target="_blank">Vanilla Javascript로 가상돔(VirtualDOM) 만들기</a>을 먼저 읽고 읽으면 이해하기 수월합니다.
+    부스트캠프에서 마스터로 활동하고 계신 황준일님이 쓰신 <a href="https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Virtual-DOM/" target="_blank">Vanilla Javascript로 가상돔(VirtualDOM) 만들기</a>를 먼저 읽고 읽으면 이해하기 수월합니다.
   </h4>
 </div>
 
