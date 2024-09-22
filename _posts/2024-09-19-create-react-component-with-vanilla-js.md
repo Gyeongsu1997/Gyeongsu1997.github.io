@@ -196,21 +196,38 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
 
 ```
 .
-├── css
-│   └── index.css
-└── js
-    ├── App.js
-    ├── components
-    │   ├── Article.js
-    │   ├── ArticleList.js
-    │   └── Header.js
-    ├── core
-    │   ├── internal
-    │   │   ├── dom.js
-    │   │   └── root.js
-    │   ├── react-dom.js
-    │   └── react.js
-    └── index.js
+├── babel.config.json
+├── index.html
+├── package.json
+├── src
+│   ├── App.js
+│   ├── components
+│   │   ├── Article.js
+│   │   ├── ArticleList.js
+│   │   └── Header.js
+│   ├── core
+│   │   ├── internal
+│   │   │   ├── dom.js
+│   │   │   └── root.js
+│   │   ├── react-dom.js
+│   │   └── react.js
+│   └── index.js
+└── static
+    ├── css
+    │   └── index.css
+    └── js
+        ├── App.js
+        ├── components
+        │   ├── Article.js
+        │   ├── ArticleList.js
+        │   └── Header.js
+        ├── core
+        │   ├── internal
+        │   │   ├── dom.js
+        │   │   └── root.js
+        │   ├── react-dom.js
+        │   └── react.js
+        └── index.js
 ```
 
 실행 화면입니다.
