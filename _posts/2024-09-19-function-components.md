@@ -1,8 +1,7 @@
 ---
 layout: single
 title:  "바닐라 자바스크립트로 리액트 함수형 컴포넌트 만들기"
-toc: true
-category: Vanilla JS
+category: VanillaJS
 tags:
   - JavaScript
 ---
@@ -200,7 +199,7 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
 
 ### (7) 빌드 및 실행
 
-터미널에서 **npm run build** 명령어를 입력하면 아래와 같이 static 폴더 아래에 컴파일된 자바스크립트 파일들이 생성됩니다.
+터미널에서 ```npm run build``` 명령어를 입력하면 아래와 같이 static 폴더 아래에 컴파일된 자바스크립트 파일들이 생성됩니다.
 
 ```
 .
