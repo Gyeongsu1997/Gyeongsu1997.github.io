@@ -234,7 +234,7 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
         └── index.js
 ```
 
-실행 화면입니다.
+다음은 실행 화면입니다.
 
 <iframe src="https://codesandbox.io/embed/8skfrc?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -242,6 +242,10 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+
+## Repository
+
+본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/01-function-components){:target="_blank"}에서 확인하실 수 있습니다.
 
 ## Reference
 
