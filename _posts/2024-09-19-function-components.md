@@ -194,7 +194,7 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
 
 <script src="https://gist.github.com/Gyeongsu1997/0195a230616068d47df448b2beb1eec2.js?file=index.js"></script>
 
-### (7) 빌드 및 실행
+### (7) 빌드
 
 터미널에서 ```npm run build``` 명령어를 입력하면 아래와 같이 static 폴더 아래에 컴파일된 자바스크립트 파일들이 생성됩니다.
 
@@ -234,7 +234,7 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
         └── index.js
 ```
 
-다음은 실행 화면입니다.
+### (8) 실행
 
 <iframe src="https://codesandbox.io/embed/8skfrc?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
