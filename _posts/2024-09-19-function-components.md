@@ -3,7 +3,8 @@ layout: single
 title:  "바닐라 자바스크립트로 리액트 함수형 컴포넌트 만들기"
 ---
 
-> 부스트캠프에서 마스터로 활동하고 계신 황준일님이 쓰신 [게시글](https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Virtual-DOM/){:target="_blank"}을 먼저 읽고 읽으면 이해하기 수월합니다.
+부스트캠프에서 마스터로 활동하고 계신 황준일님이 쓰신 [게시글](https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Virtual-DOM/){:target="_blank"}을 먼저 읽고 읽으면 이해하기 수월합니다.
+{: .notice--info}
 
 ## 개발 배경
 
