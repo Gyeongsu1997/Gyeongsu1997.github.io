@@ -3,7 +3,7 @@ layout: single
 title:  "바닐라 자바스크립트로 리액트 함수형 컴포넌트 만들기"
 ---
 
-부스트캠프에서 마스터로 활동하고 계신 황준일님이 쓰신 [게시글](https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Virtual-DOM/){:target="_blank"}을 먼저 읽고 읽으면 이해하기 수월합니다.
+> 부스트캠프에서 마스터로 활동하고 계신 황준일님이 쓰신 [게시글](https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Virtual-DOM/){:target="_blank"}을 먼저 읽고 읽으면 이해하기 수월합니다.
 
 ## 개발 배경
 
@@ -192,7 +192,7 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
 
 ### (7) 빌드 및 실행
 
-터미널에서 <b>npm run build</b> 명령어를 입력하면 아래와 같이 static 폴더 아래에 컴파일된 자바스크립트 파일들이 생성됩니다.
+터미널에서 **npm run build** 명령어를 입력하면 아래와 같이 static 폴더 아래에 컴파일된 자바스크립트 파일들이 생성됩니다.
 
 ```
 .
