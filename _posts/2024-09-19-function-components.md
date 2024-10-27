@@ -4,6 +4,7 @@ title:  "바닐라 자바스크립트로 리액트 함수형 컴포넌트 만들
 category: VanillaJS
 tags:
   - JavaScript
+  - React
 toc: true
 ---
 
@@ -132,7 +133,7 @@ function h(type, props, ...children) {
 
 ### (3) React와 ReactDOM
 
-VirtualDOM을 만들어주는 함수를 h라는 이름 대신 React.createElement라는 이름으로 만들어주겠습니다.
+Virtual DOM을 만들어주는 함수를 h라는 이름 대신 React.createElement라는 이름으로 만들어주겠습니다.
 
 - src/core/react.js
 
@@ -234,7 +235,7 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
         └── index.js
 ```
 
-### (8) 실행
+### (8) 실행 화면
 
 <iframe src="https://codesandbox.io/embed/8skfrc?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
