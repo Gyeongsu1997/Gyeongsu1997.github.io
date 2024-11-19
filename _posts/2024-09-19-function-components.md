@@ -251,6 +251,3 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
 ## Reference
 
 - [Vanilla Javascript로 가상돔(VirtualDOM) 만들기](https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Virtual-DOM/){:target="_blank"}
-
-
-
