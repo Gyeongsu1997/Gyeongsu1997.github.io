@@ -75,7 +75,7 @@ _updateAttributes 함수는 새 자식 노드에서 달라진 속성과 없어�
 
 ### (3) 결과
 
-![result](../images/2024-10-29-diffing-algorithm/result.gif)
+![result]({{site.url}}/images/2024-10-29-diffing-algorithm/result.gif)
 
 위의 실행 화면에서는 변경이 있는 부분만 다시 렌더링되는 것을 볼 수 있습니다.
 
