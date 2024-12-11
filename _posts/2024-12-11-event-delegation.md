@@ -10,7 +10,7 @@ toc: true
 
 ## 1. 문제 발생
 
-지난 [포스팅](https://gyeongsu1997.github.io/vanillajs/usestate/){:target="_blank"}에서는 debounce와 diffing algorithm을 적용해 렌더링 성능을 개선했습니다. 그런데 문제가 있습니다. 상태 변화가 제대로 적용이 안되는 것 같습니다.
+지난 [포스팅](https://gyeongsu1997.github.io/vanillajs/usestate/){:target="_blank"}에서는 debounce와 diffing algorithm을 적용해 렌더링 성능을 개선했습니다. 그런데 문제가 생겼습니다. 상태 변화가 제대로 적용이 안되는 것 같습니다.
 
 <iframe src="https://codesandbox.io/embed/7tdldc?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -23,19 +23,25 @@ toc: true
 
 ## 2. 문제 분석
 
-버튼을 클릭했을 때 숫자가 바뀌는 걸 보면 이벤트 등록은 제대로 되는 것 같습니다. 하지만 1과 -1 사이에서만 왔다갔다 할 뿐입니다. 이벤트 리스너 안에서 count 값을 한번 출력해보겠습니다.
+버튼을 클릭했을 때 숫자가 바뀌는 걸 보면 이벤트 등록은 제대로 되는 것 같습니다. 하지만 1과 -1 사이에서만 왔다갔다 할 뿐입니다. 한번 이벤트 리스너 안에서 count 값을 출력해보겠습니다.
+
+<script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=Counter.js"></script>
 
 이럴 수가. count 값이 0으로 나옵니다. 도대체 왜 이런 일이 발생하는 걸까요? diffing algorithm
 
 button 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아래의 _setAttributes 함수에서 addEventListener API를 이용해 button 엘리먼트에 등록됩니다.
 
-<script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?setAttributes.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setAttributes.js"></script>
 
 이후 버튼을 클릭하면 상태 변화에 의해 다시 렌더링되면서 변경이 있는 부분만 반영이 됩니다. 그런데 이 때 button 엘리먼트는 속성이 달라지지 않았기 때문에 재렌더링 과정에서 새롭게 만들어지지 않는 것입니다. 결국 클로저가 발생해 이벤트 리스너 안에서 참조하는 계속 0으로 유지되는 것입니다.
 
-## 3. 첫 번째 시도: window 전역 객체에 함수로 등록
+## 3. 첫 번째 시도: window 전역 객체에 이벤트 리스너 등록
 
-문제의 원인은 알아냈습니다. 그렇다면 이제 문제를 해결해야합니다.
+문제의 원인은 알아냈습니다. 그렇다면 이제 문제를 해결해야합니다. addEventListener로 이벤트 리스너를 등록하지 말고 window 전역 객체에 등록한 다음 이를 사용하는 방법은 어떨까요? 밑져야 본전이니 한번 시도해 보겠습니다.
+
+<script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=event-listener-in-window.js"></script>
+
+언뜻 보기에는 잘 되는 것처럼 보입니다.
 
 ## 4. 두 번째 시도: 
 
