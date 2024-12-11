@@ -23,9 +23,11 @@ toc: true
 
 ## 2. 문제 분석
 
-버튼을 클릭했을 때 숫자가 바뀌는 걸 보면 이벤트 등록은 제대로 되는 것 같습니다. 하지만 1과 -1 사이에서만 왔다갔다 할 뿐입니다. 한번 이벤트 리스너 안에서 count 값을 출력해보겠습니다.
+버튼을 클릭했을 때 숫자가 바뀌는 걸 보면 이벤트 등록은 잘 되는 것 같습니다. 하지만 1과 -1 사이에서만 왔다갔다 할 뿐입니다. 한번 이벤트 리스너 안에서 count 값을 출력해보겠습니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=Counter.js"></script>
+
+![counter]({{site.url}}/images/2024-12-11-event-delegation/counter.gif)
 
 이럴 수가. count 값이 0으로 나옵니다. 도대체 왜 이런 일이 발생하는 걸까요? diffing algorithm
 
