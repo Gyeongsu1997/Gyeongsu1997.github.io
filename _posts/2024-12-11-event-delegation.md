@@ -8,7 +8,7 @@ tags:
 toc: true
 ---
 
-## 1. 문제 상황
+## 1. 문제 발생
 
 지난 [포스팅](https://gyeongsu1997.github.io/vanillajs/usestate/){:target="_blank"}에서는 debounce와 diffing algorithm을 적용해 렌더링 성능을 개선했습니다. 그런데 문제가 있습니다. 상태 변화가 제대로 적용이 안되는 것 같습니다.
 
@@ -27,7 +27,7 @@ toc: true
 
 이럴 수가. count 값이 0으로 나옵니다. 도대체 왜 이런 일이 발생하는 걸까요? diffing algorithm
 
-onClick prop으로 전달한 이벤트 리스너는 아래의 _setAttributes 함수에서 addEventListener를 이용해 button 엘리먼트에 등록됩니다.
+button 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아래의 _setAttributes 함수에서 addEventListener API를 이용해 button 엘리먼트에 등록됩니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?setAttributes.js"></script>
 
