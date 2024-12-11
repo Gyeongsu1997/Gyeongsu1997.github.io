@@ -19,13 +19,25 @@ toc: true
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
+왜 이런 문제가 발생하는 걸까요? 오늘의 포스팅에서는 문제가 발생한 원인을 분석하고 해결해보겠습니다.
+
 ## 2. 문제 분석
 
-왜 이런 문제가 발생할까요?
+버튼을 클릭했을 때 숫자가 바뀌는 걸 보면 이벤트 등록은 제대로 되는 것 같습니다. 하지만 1과 -1 사이에서만 왔다갔다 할 뿐입니다. 이벤트 리스너 안에서 count 값을 한번 출력해보겠습니다.
 
-## 3. 첫 번째 시도
+이럴 수가. count 값이 0으로 나옵니다. 도대체 왜 이런 일이 발생하는 걸까요? diffing algorithm
 
-## 4. 두 번째 시도
+onClick prop으로 전달한 이벤트 리스너는 아래의 _setAttributes 함수에서 addEventListener를 이용해 button 엘리먼트에 등록됩니다.
+
+<script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?setAttributes.js"></script>
+
+button 엘리먼트는 속성이 달라지지 않았기 때문에 재렌더링 과정에서 새롭게 만들어지지 않는 것입니다. 결국 클로저가 발생해 이벤트 리스너 안에서 참조하는 계속 0으로 유지되는 것입니다.
+
+## 3. 첫 번째 시도: window 전역 객체에 함수로 등록
+
+문제의 원인은 알아냈습니다. 그렇다면 이제 문제를 해결해야합니다.
+
+## 4. 두 번째 시도: 
 
 ## Repository
 
