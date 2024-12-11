@@ -61,15 +61,19 @@ root.js에서는 더이상 새로 만들어진 루트 노드를 DOM에 바로 �
 
 <script src="https://gist.github.com/Gyeongsu1997/98c2e4def5927fa1b0290cf415eecad9.js?file=render-with-diff.js"></script>
 
+### (3) _diff
+
+_diff 함수에서는 기존 노드와 새 노드에서 달라진 자식 노드를 비교하기 위해 _updateElement 함수를 호출합니다. _diff 함수의 실행이 끝나면 변경 사항이 모두 기존 노드에 반영됩니다.
+
 <script src="https://gist.github.com/Gyeongsu1997/98c2e4def5927fa1b0290cf415eecad9.js?file=diff.js"></script>
 
-### (3) _updateElement
+### (4) _updateElement
 
 _updateElement 함수에서는 상황을 위에서 본 다섯 가지 경우로 나누어 처리합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/98c2e4def5927fa1b0290cf415eecad9.js?file=updateElement.js"></script>
 
-### (4) _updateAttributes
+### (5) _updateAttributes
 
 _updateAttributes 함수에서는 새 자식 노드에서 달라진 속성과 없어진 속성을 기존 자식 노드에 반영합니다.
 

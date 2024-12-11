@@ -55,7 +55,7 @@ package.json 파일에 scripts로 등록해 놓고 사용하면 편리합니다.
 ```json
 {
   "scripts": {
-    "build": "npx babel src --out-dir lib"
+    "build": "babel src --out-dir lib"
   }
 }
 ```
