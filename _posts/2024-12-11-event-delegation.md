@@ -12,11 +12,16 @@ toc: true
 
 지난 [포스팅](https://gyeongsu1997.github.io/vanillajs/usestate/){:target="_blank"}에서는 debounce와 diffing algorithm을 적용해 렌더링 성능을 개선했습니다. 그런데 문제가 있습니다. 상태 변화가 제대로 적용이 안되는 것 같습니다.
 
-(gif)
-
-왜 이런 문제가 발생할까요?
+<iframe src="https://codesandbox.io/embed/7tdldc?view=preview&hidenavigation=1"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="03-diffing-algorithm"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 ## 2. 문제 분석
+
+왜 이런 문제가 발생할까요?
 
 ## 3. 첫 번째 시도
 
