@@ -39,7 +39,7 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes.js"></script>
 
-결국 버튼 엘리먼트에 걸려있는 이벤트 리스너는 새로 만들어진 함수가 아니라 처음 렌더링될 때 만들어진 함수이며 그 안에서 참조하는 count 값도 클로저로 인해 계속 0으로 유지되는 것입니다.
+결국 버튼 엘리먼트에 등록된 이벤트 리스너는 새로 만들어진 함수가 아니라 처음 렌더링될 때 만들어진 함수이며 그 안에서 참조하는 count 값도 클로저로 인해 계속 0으로 유지되는 것입니다.
 
 ## 3. 첫 번째 시도: window 전역 객체에 이벤트 리스너 등록
 
@@ -65,9 +65,11 @@ toc: true
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-그렇습니다. 상태를 공유하게 됩니다. 아쉽지만 이 방법은 사용할 수 없을 것 같습니다.
+그렇습니다. 두 컴포넌트가 상태를 공유하게 됩니다. 마지막에 렌더링되는 컴포넌트가 window 전역 객체의 메서드를 override하기 때문입니다. 아쉽지만 이 방법은 사용할 수 없을 것 같습니다.
 
-## 4. 두 번째 시도: 루트 엘리먼트에 이벤트 위임
+## 4. 두 번째 시도: 루트 요소에 이벤트 위임
+
+아무래도 이벤트를 등록하는 방식을 바꿔야할 것 같습니다. 각 요소에 직접 이벤트를 등록하면 안될 것 같습니다. 리액트의 이벤트 관리 방식을 본따 루트 요소에 이벤트를 등록하면 어떨까요?
 
 ## Repository
 
