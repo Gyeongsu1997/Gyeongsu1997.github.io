@@ -10,7 +10,7 @@ toc: true
 
 ## 1. 문제 발생
 
-지난 [포스팅](https://gyeongsu1997.github.io/vanillajs/usestate/){:target="_blank"}에서는 debounce와 diffing algorithm을 적용해 렌더링 성능을 개선했습니다. 그런데 문제가 생겼습니다. 상태 변화가 제대로 적용이 안되는 것 같습니다.
+지난 [포스팅](https://gyeongsu1997.github.io/vanillajs/diffing-algorithm/){:target="_blank"}에서는 debounce와 diffing algorithm을 적용해 렌더링 성능을 개선했습니다. 그런데 문제가 생겼습니다. 상태 변화가 제대로 적용이 안되는 것 같습니다.
 
 <iframe src="https://codesandbox.io/embed/7tdldc?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
