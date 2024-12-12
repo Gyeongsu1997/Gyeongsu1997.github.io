@@ -49,6 +49,19 @@ button 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아�
 
 언뜻 보기에는 잘 되는 것처럼 보입니다.
 
+(사진 첨부)
+
+하지만 같은 컴포넌트가 두 번 사용되면 어떨까요?
+
+<script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=double-counter.js"></script>
+
+<iframe src="https://codesandbox.io/embed/w2sk7m?view=preview&hidenavigation=1"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="04-event-delegation/02-event-listener-in-window"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
 ## 4. 두 번째 시도: 
 
 ## Repository
