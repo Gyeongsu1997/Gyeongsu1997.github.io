@@ -29,17 +29,17 @@ toc: true
 
 ![counter]({{site.url}}/images/2024-12-11-event-delegation/counter.gif)
 
-이럴 수가. count 값이 계속 0으로 나옵니다. 도대체 왜 이런 일이 발생하는 걸까요? diffing algorithm
+이럴 수가. count 값이 계속 0으로 나옵니다. 도대체 왜 이런 일이 발생하는 걸까요? 문제는 새로 도입한 diffing algorithm과 기존의 이벤트 등록 방식 사이의 간극 때문에 발생합니다.
 
 button 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아래의 _setAttributes 함수에서 addEventListener API를 이용해 button 엘리먼트에 등록됩니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setAttributes.js"></script>
 
-이후 버튼을 클릭하면 상태 변화에 의해 재렌더링되는데 이때 변경이 있는 부분만 DOM에 반영됩니다. 아래의 _updateAttributes 함수에서는 button 엘리먼트는 그대로 있고 달라진 속성만 적용하게 되는데 이벤트 리스너는 속성이 아니므로 이전에 등록된 리스너를 그대로 사용하고 있습니다. 
+이후 버튼을 클릭하면 상태 변화에 의해 재렌더링되는데 이때 변경이 있는 부분만 DOM에 반영됩니다. 아래의 _updateAttributes 함수에서 달라진 속성만 적용하게 되는데 이벤트 리스너는 속성이 아니므로 이전에 등록된 리스너를 그대로 사용하고 있습니다. 
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes.js"></script>
 
-결국 클로저가 발생해 이벤트 리스너 안에서 참조하는 계속 0으로 유지되는 것입니다.
+결국 클로저가 발생해 이벤트 리스너 안에서 참조하는 값이 계속 0으로 유지되는 것입니다.
 
 ## 3. 첫 번째 시도: window 전역 객체에 이벤트 리스너 등록
 
