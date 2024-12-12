@@ -35,7 +35,7 @@ button 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아�
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setAttributes.js"></script>
 
-이후 버튼을 클릭하면 상태 변화에 의해 재렌더링되는데 이때 변경이 있는 부분만 DOM에 반영됩니다. 아래의 _updateAttributes 함수에서 달라진 속성만 적용하게 되는데 이벤트 리스너는 속성이 아니므로 이전에 등록된 리스너를 그대로 사용하고 있습니다. 
+이후 버튼을 클릭하면 상태 변화에 의해 재렌더링되는데 이때 변경이 있는 부분만 DOM에 반영됩니다. 아래의 _updateAttributes 함수에서는 새로 만들어진 버튼 엘리먼트에서 달라진 속성만 기존에 존재하던 버튼 엘리먼트에 적용하게 되는데 이벤트 리스너는 속성이 아니므로 이전에 등록된 리스너를 그대로 사용하게 됩니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes.js"></script>
 
