@@ -31,7 +31,7 @@ toc: true
 
 이럴 수가. count 값이 계속 0으로 나옵니다. 도대체 왜 이런 일이 발생하는 걸까요? 문제는 새로 도입한 diffing algorithm과 기존의 이벤트 등록 방식 사이의 간극 때문에 발생합니다.
 
-button 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아래의 _setAttributes 함수에서 addEventListener API를 이용해 button 엘리먼트에 등록됩니다.
+버튼 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아래의 _setAttributes 함수에서 addEventListener API를 이용해 버튼 엘리먼트에 등록됩니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setAttributes.js"></script>
 
@@ -47,11 +47,9 @@ button 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아�
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=event-listener-in-window.js"></script>
 
-언뜻 보기에는 잘 되는 것처럼 보입니다.
-
 (사진 첨부)
 
-하지만 같은 컴포넌트가 두 번 사용되면 어떨까요?
+언뜻 보기에는 잘 되는 것처럼 보입니다. 하지만 같은 컴포넌트가 두 번 사용되면 어떨까요?
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=double-counter.js"></script>
 
@@ -62,7 +60,9 @@ button 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아�
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-## 4. 두 번째 시도: 
+그렇습니다. 상태를 공유하게 됩니다. 아쉽지만 이 방법은 사용할 수 없을 것 같습니다.
+
+## 4. 두 번째 시도: 루트 엘리먼트에 이벤트 위임
 
 ## Repository
 
