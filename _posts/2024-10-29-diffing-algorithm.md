@@ -81,7 +81,9 @@ _updateAttributes 함수는 새 자식 노드에서 달라진 속성과 없어�
 
 ## Summary
 
-오늘의 포스팅에는 렌더링에 debounce와 diffing algorithm을 적용해보는 과정을 담았습니다. debounce를 통해 렌더링이 여러 번 일어날 때 한 번만 실행되도록 했고 diffing algorithm을 통해 재렌더링을 할 때 변경이 있는 부분만 DOM에 반영되도록 했습니다. 이것으로 된 걸까요? 다음 [포스팅](https://gyeongsu1997.github.io/vanillajs/event-delegation/){:target="_blank"}에서 이어집니다.
+오늘의 포스팅에는 렌더링에 debounce와 diffing algorithm을 적용해보는 과정을 담았습니다. debounce를 통해 렌더링이 여러 번 일어날 때 한 번만 실행되도록 했고 diffing algorithm을 통해 재렌더링을 할 때 변경이 있는 부분만 DOM에 반영되도록 했습니다.
+
+이것으로 된 걸까요? 다음 [포스팅](https://gyeongsu1997.github.io/vanillajs/event-delegation/){:target="_blank"}에서 이어집니다.
 
 ## Repository
 
