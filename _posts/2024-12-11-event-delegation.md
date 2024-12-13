@@ -79,7 +79,13 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=createElement.js"></script>
 
-이벤트 이름과 ID, value인 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다.
+이벤트 이름과 ID, value인 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다. _setEvent 함수에서는 eventListeners 객체에 이벤트 리스너 정보를 배열로 관리합니다.
+
+<script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setEvent.js"></script>
+
+렌더링하기 전에 이벤트를 지우고 이벤트를 등록합니다.
+
+<script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=render.js"></script>
 
 ## Repository
 
