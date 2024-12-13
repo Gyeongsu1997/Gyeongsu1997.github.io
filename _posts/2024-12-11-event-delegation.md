@@ -81,23 +81,23 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=utils.js"></script>
 
-아래의 _setAttributes 함수에서는 요소가 생성될 때 eventKey라는 이름으로 랜덤한 ID를 부여합니다. 그리고 addEventListener API로 이벤트 리스너를 등록하는 대신 이벤트 이름과 ID, 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다.
+아래의 _setAttributes 함수에서는 요소가 생성될 때 eventKey라는 이름으로 고유힌 ID를 부여합니다. 그리고 addEventListener API로 이벤트 리스너를 등록하는 대신 이벤트 이름과 방금 할당한 eventKey, 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=createElement.js"></script>
 
 ### (2) 루트 요소에 이벤트 등록 및 제거
 
-root.js에 있는 eventListeners 객체에서는 이벤트 이름을 프로퍼티 키로 이벤트 리스너 배열을 값으로 관리하고 있습니다. _setEvent 함수에서는 실제로 루트 요소에 이벤트 리스너로 등록될 내부 함수 listener를 정의합니다. listener 함수에서는 이벤트의 타겟이 eventKey와 같을 때만 callback 함수를 실행합니다.
+root.js에 있는 eventListeners 객체는 이벤트 이름을 프로퍼티 키로 이벤트 리스너 배열을 값으로 담고 있습니다. _setEvent 함수 내부에서는 실제로 루트 요소에 이벤트 리스너로 등록될 함수인 listener를 정의합니다. listener 함수는 실제로 이벤트가 발생했을 때 타겟의 eventKey가 인자로 받은 eventKey와 같을 때만 callback 함수를 실행합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setEvent.js"></script>
 
-렌더링 전후에 이벤트를 지우고 이벤트를 등록합니다.
+렌더링 전후에 eventListeners 객체에 있는 이벤트 리스너들을 제거하고 다시 등록하는 과정이 추가됩니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=render.js"></script>
 
 ### (3) 재렌더링 시 처리
 
-이것으로 끝일까요? 재렌더링이 될 때 기존의 이벤트 리스너를 삭제되고 새로운 이벤트 리스너가 등록될 겁니다. 하지만 이벤트 리스너 내부에서 참조하는 eventKey는 달라진 반면 버튼 엘리먼트의 eventKey는 그대로입니다. 이 달라진 eventKey를 적용해 주어야 합니다.
+이것으로 끝일까요? 재렌더링이 될 때 기존의 이벤트 리스너는 삭제되고 새로운 이벤트 리스너가 등록될 겁니다. 하지만 이벤트 리스너 내부에서 참조하는 eventKey는 달라진 반면 버튼 엘리먼트의 eventKey는 그대로입니다. 이 달라진 eventKey를 적용해 주어야 합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes2.js"></script>
 
