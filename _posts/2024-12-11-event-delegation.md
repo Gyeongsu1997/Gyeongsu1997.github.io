@@ -97,6 +97,10 @@ root.js에 있는 _setEvent 함수에서는 eventListeners 객체에 이벤트 �
 
 ### (3) 결과
 
+(사진 첨부)
+
+루트 요소에 4개의 이벤트 리스너가 등록된 모습입니다.
+
 <iframe src="https://codesandbox.io/embed/63rzd2?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
      title="04-event-delegation/04-event-listener-in-root"
