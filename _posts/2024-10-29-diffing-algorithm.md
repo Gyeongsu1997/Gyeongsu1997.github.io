@@ -81,7 +81,7 @@ _updateAttributes 함수는 새 자식 노드에서 달라진 속성과 없어�
 
 ## Summary
 
-오늘의 포스팅에는 debounce와 diffing algorithm을 적용해 렌더링 성능을 개선해보는 과정을 담았습니다. debounce를 통해 setState가 연속해서 여러 번 호출될 때 마지막에 호출된 한 번만 렌더링이 일어나도록 했고 diffing algorithm을 통해 재렌더링을 할 때 변경이 있는 부분만 DOM에 반영되도록 했습니다.
+오늘의 포스팅에는 debounce와 diffing algorithm을 적용해 렌더링 성능을 개선해보는 과정을 담았습니다. debounce를 통해 setState가 연속해서 여러 번 호출될 때 마지막에 한 번만 렌더링이 일어나도록 했고 diffing algorithm을 통해 재렌더링을 할 때 변경이 있는 부분만 DOM에 반영되도록 했습니다.
 
 이것으로 된 걸까요? 다음 [포스팅](https://gyeongsu1997.github.io/vanillajs/event-delegation/){:target="_blank"}에서 이어집니다.
 
