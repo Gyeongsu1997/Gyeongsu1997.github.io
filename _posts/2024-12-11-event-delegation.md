@@ -81,7 +81,7 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=utils.js"></script>
 
-아래에서는 요소가 생성될 때 랜덤한 ID를 부여하는 것을 보여주고 있습니다. 그리고 addEventListener API로 이벤트 리스너를 등록하는 대신 이벤트 이름과 ID, 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다.
+아래의 _setAttributes 함수에서는 요소가 생성될 때 eventKey라는 이름으로 랜덤한 ID를 부여합니다. 그리고 addEventListener API로 이벤트 리스너를 등록하는 대신 이벤트 이름과 ID, 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=createElement.js"></script>
 
