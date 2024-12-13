@@ -81,17 +81,17 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=utils.js"></script>
 
-아래에서는 요소가 생성될 때 랜덤한 ID를 부여하는 것을 보여주고 있습니다. 그리고 addEventListener API로 이벤트 리스너를 등록하는 대신 이벤트 이름과 ID, value인 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다.
+아래에서는 요소가 생성될 때 랜덤한 ID를 부여하는 것을 보여주고 있습니다. 그리고 addEventListener API로 이벤트 리스너를 등록하는 대신 이벤트 이름과 ID, 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=createElement.js"></script>
 
 ### (2) 루트 요소에 이벤트 등록 및 제거
 
-root.js에 있는 _setEvent 함수에서는 eventListeners 객체에 이벤트 이름을 프로퍼티 키로 이벤트 리스너 배열을 값으로 관리합니다. 내부 함수 listener는 실제로 루트 요소에 등록될 이벤트 리스너이며 이벤트의 타겟이 internalInstanceKey와 같을 때만 callback 함수를 실행합니다.
+root.js에 있는 eventListeners 객체에서는 이벤트 이름을 프로퍼티 키로 이벤트 리스너 배열을 값으로 관리하고 있습니다. _setEvent 함수에서는 실제로 루트 요소에 이벤트 리스너로 등록될 내부 함수 listener를 정의합니다. listener 함수에서는 이벤트의 타겟이 internalInstanceKey와 같을 때만 callback 함수를 실행합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setEvent.js"></script>
 
-렌더링하기 전에 이벤트를 지우고 이벤트를 등록합니다.
+렌더링 전후에 이벤트를 지우고 이벤트를 등록합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=render.js"></script>
 
