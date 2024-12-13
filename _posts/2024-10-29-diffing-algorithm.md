@@ -79,7 +79,9 @@ _updateAttributes 함수는 새 자식 노드에서 달라진 속성과 없어�
 
 위의 실행 화면에서 변경이 있는 부분만 다시 렌더링되는 것을 볼 수 있습니다.
 
-이것으로 된 걸까요? 다음 [포스팅](https://gyeongsu1997.github.io/vanillajs/event-delegation/){:target="_blank"}에서 이어집니다.
+## Summary
+
+오늘의 포스팅에서는 debounce와 diffing algorithm을 적용해 렌더링 성능을 개선해 보았습니다. 이것으로 된 걸까요? 다음 [포스팅](https://gyeongsu1997.github.io/vanillajs/event-delegation/){:target="_blank"}에서 이어집니다.
 
 ## Repository
 
