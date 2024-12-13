@@ -93,7 +93,7 @@ root.js에 있는 _setEvent 함수에서는 eventListeners 객체에 이벤트 �
 
 ### (3) 재렌더링 시 처리
 
-이것으로 끝일까요? 재렌더링이 될 때 이벤트 리스너가 새로 등록될 겁니다. 하지만 internalInstanceKey는 달라졌습니다. 이 달라진 internalInstanceKey를 적용해 주어야 합니다.
+이것으로 끝일까요? 재렌더링이 될 때 기존의 이벤트 리스너를 삭제되고 새로운 이벤트 리스너가 등록될 겁니다. 하지만 이벤트 리스너 내부에서 참조하는 internalInstanceKey는 달라진 반면 버튼 엘리먼트의 internalInstanceKey는 그대로입니다. 이 달라진 internalInstanceKey를 적용해 주어야 합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes2.js"></script>
 
@@ -101,7 +101,7 @@ root.js에 있는 _setEvent 함수에서는 eventListeners 객체에 이벤트 �
 
 ![event-listeners-in-root]({{site.url}}/images/2024-12-11-event-delegation/event-listeners-in-root.png)
 
-루트 요소에 4개의 이벤트 리스너가 등록된 모습입니다.
+루트 요소에 4개의 이벤트 리스너가 잘 등록된 모습입니다.
 
 <iframe src="https://codesandbox.io/embed/63rzd2?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
