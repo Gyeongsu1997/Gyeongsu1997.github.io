@@ -41,7 +41,9 @@ toc: true
 
 결국 버튼 엘리먼트에 등록된 이벤트 리스너는 새로 만들어진 함수가 아니라 처음 렌더링될 때 만들어진 함수이며 그 안에서 참조하는 count 값도 클로저로 인해 계속 0으로 유지되는 것입니다.
 
-## 3. 첫 번째 시도: window 전역 객체에 이벤트 리스너 등록
+## 3. 첫 번째 시도
+
+### (1) window 전역 객체에 이벤트 리스너 등록
 
 문제의 원인은 알아냈습니다. 그렇다면 이제 문제를 해결해야합니다. addEventListener로 이벤트 리스너를 등록하지 말고 window 전역 객체에 등록한 다음 이를 사용하는 방법은 어떨까요? 그러면 렌더링을 할 때마다 함수가 새로 정의되지 않을까요? 밑져야 본전이니 한번 시도해 보겠습니다.
 
@@ -53,6 +55,8 @@ toc: true
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+
+### (2) 같은 컴포넌트가 여러 번 사용되는 경우
 
 언뜻 보기에는 잘 되는 것처럼 보입니다. 하지만 같은 컴포넌트가 두 번 사용되면 어떨까요?
 
@@ -77,7 +81,7 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=utils.js"></script>
 
-아래의 _setAttributes 함수에서는 요소가 생성될 때 랜덤한 ID를 부여합니다. 그리고 addEventListener API로 이벤트 리스너를 등록하는 대신 이벤트 이름과 ID, value인 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다.
+아래에서처럼 요소가 생성될 때 랜덤한 ID를 부여합니다. 그리고 addEventListener API로 이벤트 리스너를 등록하는 대신 이벤트 이름과 ID, value인 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=createElement.js"></script>
 
