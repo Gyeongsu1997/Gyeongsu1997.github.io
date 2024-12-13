@@ -69,7 +69,7 @@ toc: true
 
 ## 4. 두 번째 시도: 루트 요소에 이벤트 위임
 
-아무래도 이벤트를 등록하는 방식을 바꿔야할 것 같습니다. 리액트의 이벤트 관리 방식을 본따 각 요소에 직접 이벤트를 등록하는 대신 루트 요소에 이벤트를 등록하면 어떨까요? 좋은 생각인 것 같습니다. 하지만 루트 요소에 이벤트를 등록한다고 해도 실제로 이벤트가 발생하는 시점에 어떤 요소가 위임한 이벤트인지 이벤트의 타겟과 비교해 구분할 수 있어야합니다. 이를 위해 각 요소를 구분할 수 있는 고유한 ID가 필요할 것 같습니다.
+아무래도 이벤트를 등록하는 방식을 바꿔야할 것 같습니다. 리액트의 이벤트 관리 방식을 본따 각 요소에 직접 이벤트를 등록하는 대신 루트 요소에 이벤트를 등록하면 어떨까요? 하지만 루트 요소에 이벤트를 등록한다고 해도 실제로 이벤트가 발생하는 시점에 어떤 요소가 위임한 이벤트인지 이벤트의 타겟과 비교해 구분할 수 있어야합니다. 이를 위해 각 요소를 구분할 수 있는 고유한 ID가 필요할 것 같습니다.
 
 각 요소에 고유한 ID를 부여하기 위해 랜덤한 문자열을 생성하는 함수를 utils.js에 추가하겠습니다.
 
@@ -79,6 +79,8 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=createElement.js"></script>
 
+### (1) 루트 요소에 이벤트 등록 및 제거
+
 root.js에 있는 _setEvent 함수에서는 eventListeners 객체에 이벤트 이름을 프로퍼티 키로 이벤트 리스너 배열을 값으로 관리합니다. 내부 함수 listener는 실제로 루트 요소에 등록될 이벤트 리스너이며 이벤트의 타겟이 internalInstanceKey와 같을 때만 callback 함수를 실행합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setEvent.js"></script>
@@ -87,9 +89,13 @@ root.js에 있는 _setEvent 함수에서는 eventListeners 객체에 이벤트 �
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=render.js"></script>
 
-이것으로 끝이 아닙니다. 재렌더링이 될 때 이벤트 리스너가 새로 등록됩니다. 하지만 internalInstanceKey는 달라졌습니다. 이 달라진 internalInstanceKey를 적용해 주어야 합니다.
+### (2) 루트 요소에 이벤트 등록 및 제거
+
+이것으로 끝일까요? 재렌더링이 될 때 이벤트 리스너가 새로 등록될 겁니다. 하지만 internalInstanceKey는 달라졌습니다. 이 달라진 internalInstanceKey를 적용해 주어야 합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes2.js"></script>
+
+### (3) 결과
 
 <iframe src="https://codesandbox.io/embed/63rzd2?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
