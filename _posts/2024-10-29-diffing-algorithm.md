@@ -59,7 +59,7 @@ _render 함수에서는 더이상 새로 만들어진 루트 노드를 DOM에 �
 
 <script src="https://gist.github.com/Gyeongsu1997/98c2e4def5927fa1b0290cf415eecad9.js?file=render-with-diff.js"></script>
 
-_diff 함수에서는 기존 노드와 새 노드에서 달라진 자식 노드가 있는 지 비교하기 위해 _updateElement 함수를 호출합니다. _diff 함수의 실행이 끝나면 변경 사항이 기존 노드에 반영됩니다.
+_diff 함수에서는 기존 노드와 새 노드의 자식 노드를 비교하기 위해 _updateElement 함수를 반복해서 호출합니다. _diff 함수의 실행이 끝나면 변경 사항이 기존 노드에 반영됩니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/98c2e4def5927fa1b0290cf415eecad9.js?file=diff.js"></script>
 
