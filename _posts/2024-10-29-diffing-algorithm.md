@@ -55,7 +55,7 @@ diffing algorithm을 만들 때 고려해야할 경우를 아래와 같이 다�
 
 ### (2) 렌더링에 diffing algorithm 적용
 
-_render 함수에서는 더이상 새로 만들어진 루트 노드를 DOM에 바로 반영하지 않고 기존에 있던 루트 노드와 달라진 점을 비교하기 위해 _diff 함수를 호출합니다.
+_render 함수에서는 새로 만들어진 루트 노드를 더이상 DOM에 바로 반영하지 않고 기존에 있던 루트 노드와 달라진 점을 비교하기 위해 _diff 함수를 호출합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/98c2e4def5927fa1b0290cf415eecad9.js?file=render-with-diff.js"></script>
 
