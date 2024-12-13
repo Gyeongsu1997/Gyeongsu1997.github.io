@@ -99,7 +99,7 @@ root.js에 있는 _setEvent 함수에서는 eventListeners 객체에 이벤트 �
 
 ### (4) 결과
 
-(사진 첨부)
+![event-listeners-in-root]({{site.url}}/images/2024-12-11-event-delegation/event-listeners-in-root.png)
 
 루트 요소에 4개의 이벤트 리스너가 등록된 모습입니다.
 
