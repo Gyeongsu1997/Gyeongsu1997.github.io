@@ -79,7 +79,7 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=createElement.js"></script>
 
- _setEvent 함수에서는 eventListeners 객체에 이벤트 리스너 정보를 배열로 관리합니다.
+ _setEvent 함수에서는 eventListeners 객체에 이벤트 리스너 정보를 배열로 관리합니다. 내부 함수 listener는 실제로 루트 요소에 등록될 이벤트 리스너이며 이벤트의 타겟이 internalInstanceKey와 같을 때만 callback 함수를 실행합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setEvent.js"></script>
 
