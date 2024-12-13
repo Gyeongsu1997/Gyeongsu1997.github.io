@@ -71,15 +71,15 @@ toc: true
 
 아무래도 이벤트를 등록하는 방식을 바꿔야할 것 같습니다. 리액트의 이벤트 관리 방식을 본따 각 요소에 직접 이벤트를 등록하는 대신 루트 요소에 이벤트를 등록하면 어떨까요? 하지만 루트 요소에 이벤트를 등록한다고 해도 실제로 이벤트가 발생하는 시점에는 어떤 요소가 위임한 이벤트인지 구분할 수 있어야합니다. 이를 위해 각 요소를 구분할 수 있는 고유한 ID가 필요할 것 같습니다.
 
-각 요소에 랜덤한 ID를 부여하기 위해 랜덤한 문자열을 생성하는 함수를 utils.js에 추가하겠습니다.
+각 요소에 고유한 ID를 부여하기 위해 랜덤한 문자열을 생성하는 함수를 utils.js에 추가하겠습니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=utils.js"></script>
 
-아래의 _setAttributs 함수에서 요소기 생성될 때 랜덤한 ID를 부여합니다.
+아래의 _setAttributes 함수에서는 요소가 생성될 때 랜덤한 ID를 부여합니다. addEventListener로 이벤트 리스너를 등록하는 대신 이벤트 이름과 ID, value인 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=createElement.js"></script>
 
-이벤트 이름과 ID, value인 이벤트 리스너를 인자로 _setEvent 함수를 호출하고 있습니다. _setEvent 함수에서는 eventListeners 객체에 이벤트 리스너 정보를 배열로 관리합니다.
+ _setEvent 함수에서는 eventListeners 객체에 이벤트 리스너 정보를 배열로 관리합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setEvent.js"></script>
 
