@@ -29,7 +29,7 @@ toc: true
 
 ![counter]({{site.url}}/images/2024-12-11-event-delegation/counter.gif)
 
-이럴 수가. count 값이 계속 0으로 나옵니다. 도대체 왜 이런 일이 발생하는 걸까요? 문제는 새로 도입한 diffing algorithm과 기존의 이벤트 등록 방식 사이의 간극 때문에 발생합니다.
+이럴 수가. count 값이 계속 0으로 나옵니다. 도대체 왜 이런 일이 발생하는 걸까요? 문제는 새로 도입한 diffing algorithm과 기존의 이벤트 등록 방식 사이의 간극으로 인해 발생합니다.
 
 버튼 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아래의 _setAttributes 함수에서 addEventListener API를 이용해 버튼 엘리먼트에 등록됩니다.
 
@@ -85,17 +85,17 @@ toc: true
 
 ### (2) 루트 요소에 이벤트 등록 및 제거
 
-root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 하여 이벤트 리스너의 배열을 관리합니다. _setEvent 함수 내부에서 정의하는 listener 함수는 실제로 루트 요소에 등록될 이벤트 리스너이며 이벤트가 발생했을 때 그 타겟의 eventKey가 인자로 받은 eventKey와 같을 때만 callback 함수를 실행합니다.
+root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 하여 이벤트 리스너의 배열을 관리합니다. _setEvent 함수 내부에서 정의하는 함수는 실제로 루트 요소에 등록될 이벤트 리스너이며 이벤트가 발생했을 때 그 타겟의 eventKey가 인자로 받은 eventKey와 같을 때만 callback 함수를 실행합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setEvent.js"></script>
 
-렌더링을 시작하기 전에 기존에 등록된 이벤트 리스너들을 루트 요소에서 제거하고 렌더링을 마친 다음 새롭게 eventListeners 객체에 추가된 이벤트 리스너들을 다시 루트 요소에 등록합니다.
+렌더링을 시작하기 전에 기존에 등록된 이벤트 리스너들을 루트 요소에서 제거하고 렌더링을 마친 다음 새롭게 추가된 이벤트 리스너들을 다시 루트 요소에 등록합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=render.js"></script>
 
 ### (3) 재렌더링 시 처리
 
-이제 재렌더링을 할 때 이전에 등록된 이벤트 리스너는 삭제되고 새로운 이벤트 리스너가 루트 요소에 등록될 겁니다. 이것으로 끝일까요? 새로운 이벤트 리스너 내부에서 참조하는 eventKey는 달라진 반면 버튼 엘리먼트의 eventKey는 그대로입니다. 버튼 엘리먼트에 이 달라진 eventKey를 적용해 주어야 합니다.
+이제 재렌더링을 할 때 이전에 등록된 이벤트 리스너는 삭제되고 새로운 이벤트 리스너가 루트 요소에 등록될 겁니다. 하지만 이것으로 끝이 아닙니다. 새로운 이벤트 리스너 내부에서 참조하는 eventKey는 달라진 반면 버튼 엘리먼트의 eventKey는 그대로입니다. 버튼 엘리먼트에 이 달라진 eventKey를 적용해 주어야 이벤트가 발생했을 때 이벤트 리스너가 잘 실행될 것입니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes2.js"></script>
 
