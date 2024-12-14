@@ -89,7 +89,7 @@ root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 하여 이
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setEvent.js"></script>
 
-렌더링을 시작하기 전에 기존에 등록된 이벤트 리스너들을 루트 요소에서 제거하고 렌더링을 마친 다음 새롭게 추가된 이벤트 리스너들을 다시 루트 요소에 등록합니다.
+렌더링을 시작하기 전에 기존에 등록된 이벤트 리스너들을 루트 요소에서 제거하고, 렌더링을 마친 다음 새롭게 추가된 이벤트 리스너들을 다시 루트 요소에 등록합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=render.js"></script>
 
@@ -114,9 +114,7 @@ root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 하여 이
 
 ## Summary
 
-오늘의 포스팅에서는 diffing algorithm을 적용한 뒤 발생한 문제를 해결하는 과정을 담았습니다.
-
-<!-- 오늘의 포스팅에는 debounce와 diffing algorithm을 적용해 렌더링 성능을 개선해보는 과정을 담았습니다. debounce를 통해 setState가 연속해서 여러 번 호출될 때 마지막에 한 번만 렌더링이 일어나도록 했고 diffing algorithm을 통해 재렌더링을 할 때 변경이 있는 부분만 DOM에 반영되도록 했습니다. -->
+오늘의 포스팅에서는 diffing algorithm을 적용한 뒤 이벤트 등록 과정에서 발생한 문제를 해결하는 과정을 담았습니다. 루트 요소에 이벤트를 위임하는 것으로 해결했습니다.
 
 ## Repository
 
