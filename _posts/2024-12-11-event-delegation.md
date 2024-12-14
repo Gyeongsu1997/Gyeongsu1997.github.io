@@ -103,7 +103,7 @@ root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 하여 이
 
 ![event-listeners-in-root]({{site.url}}/images/2024-12-11-event-delegation/event-listeners-in-root.png)
 
-루트 요소에 4개의 이벤트 리스너가 잘 등록된 모습입니다. 같은 컴포넌트를 여러 번 사용해도 상태가 독립적으로 잘 관리됩니다.
+루트 요소에 4개의 이벤트 리스너가 등록된 모습입니다. 같은 컴포넌트를 여러 번 사용해도 상태가 독립적으로 관리됩니다.
 
 <iframe src="https://codesandbox.io/embed/63rzd2?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -114,7 +114,7 @@ root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 하여 이
 
 ## Summary
 
-이번 포스팅에는 diffing algorithm을 적용한 뒤 이벤트 등록 과정에서 발생한 문제를 해결하는 과정을 담았습니다. 처음에는 window 전역 객체에 이벤트 리스너를 등록하는 방법을 시도했지만 같은 컴포넌트가 여러 번 사용될 때 상태를 공유하게 되는 문제가 있었습니다. 두 번째로 시도한 리액트의 이벤트 관리 방식을 본따 루트 요소에 이벤트를 위임하는 것으로 해결할 수 있었습니다.
+이번 포스팅에는 diffing algorithm을 적용한 뒤 이벤트 등록 과정에서 발생한 문제를 해결하는 과정을 담았습니다. 처음에는 window 전역 객체에 이벤트 리스너를 등록하는 방법을 시도해보았지만 같은 컴포넌트가 여러 번 사용될 때 상태를 공유하게 되는 문제가 있었습니다. 두 번째로 시도한 리액트의 이벤트 관리 방식을 본따 루트 요소에 이벤트를 위임하는 것으로 해결할 수 있었습니다.
 
 ## Repository
 
