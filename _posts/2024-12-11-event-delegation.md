@@ -35,7 +35,7 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setAttributes.js"></script>
 
-이후 버튼을 클릭하면 상태 변화에 의해 재렌더링되는데 이때 변경이 있는 부분만 DOM에 반영됩니다. 아래의 _updateAttributes 함수에서는 새로 만들어진 버튼 엘리먼트에서 달라진 속성만 기존에 존재하던 버튼 엘리먼트에 적용합니다. 그런데 addEventListener API로 등록된 이벤트 리스너는 속성이 아니므로 이전에 등록된 리스너를 그대로 사용하게 됩니다.
+이후 버튼을 클릭하면 상태 변화에 의해 재렌더링되는데 이때 변경이 있는 부분만 DOM에 반영됩니다. 아래의 _updateAttributes 함수에서는 새로 만들어진 버튼 엘리먼트에서 달라진 속성만 기존에 존재하던 버튼 엘리먼트에 적용합니다. 그런데 addEventListener API로 등록된 이벤트 리스너는 속성이 아니기 때문에 이전에 등록된 이벤트 리스너를 그대로 사용하게 됩니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes.js"></script>
 
@@ -95,7 +95,7 @@ root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 하여 이
 
 ### (3) 재렌더링 시 처리
 
-이제 재렌더링을 할 때 이전에 등록된 이벤트 리스너는 삭제되고 새로운 이벤트 리스너가 루트 요소에 등록될 겁니다. 하지만 이것으로 끝이 아닙니다. 새로운 이벤트 리스너 내부에서 참조하는 eventKey는 달라진 반면 버튼 엘리먼트의 eventKey는 그대로입니다. 버튼 엘리먼트에 이 달라진 eventKey를 적용해 주어야 이벤트가 발생했을 때 이벤트 리스너가 잘 실행될 것입니다.
+이제 재렌더링을 할 때 이전에 등록된 이벤트 리스너는 삭제되고 새로운 이벤트 리스너가 루트 요소에 등록될 겁니다. 하지만 이것으로 끝이 아닙니다. 새로운 이벤트 리스너 내부에서 참조하는 eventKey는 달라진 반면 버튼 엘리먼트의 eventKey는 아직 그대로입니다. 버튼 엘리먼트의 eventKey를 이벤트 리스너 내부에서 참조하는 eventKey와 동일하게 만들어야 이벤트가 발생했을 때 이벤트 리스너가 잘 실행될 것입니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes2.js"></script>
 
