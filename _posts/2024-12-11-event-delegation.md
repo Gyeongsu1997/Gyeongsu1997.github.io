@@ -35,7 +35,7 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setAttributes.js"></script>
 
-이후 버튼을 클릭하면 상태 변화에 의해 재렌더링되는데 이때 변경이 있는 부분만 DOM에 반영됩니다. 아래의 _updateAttributes 함수에서는 새로 만들어진 버튼 엘리먼트에서 달라진 속성만 기존에 존재하던 버튼 엘리먼트에 적용하게 되는데 addEventListener API로 등록된 이벤트 리스너는 속성이 아니므로 이전에 등록된 리스너를 그대로 사용하게 됩니다.
+이후 버튼을 클릭하면 상태 변화에 의해 재렌더링되는데 이때 변경이 있는 부분만 DOM에 반영됩니다. 아래의 _updateAttributes 함수에서는 새로 만들어진 버튼 엘리먼트에서 달라진 속성만 기존에 존재하던 버튼 엘리먼트에 적용합니다. 그런데 addEventListener API로 등록된 이벤트 리스너는 속성이 아니므로 이전에 등록된 리스너를 그대로 사용하게 됩니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes.js"></script>
 
@@ -56,7 +56,7 @@ toc: true
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-언뜻 보기에는 잘 되는 것처럼 보입니다. 하지만 같은 컴포넌트가 두 번 사용되면 어떨까요?
+언뜻 보기에는 잘 되는 것처럼 보입니다. 하지만 같은 컴포넌트가 여러 번 사용되면 어떨까요?
 
 ### (2) 같은 컴포넌트가 여러 번 사용되는 경우
 
@@ -85,11 +85,11 @@ toc: true
 
 ### (2) 루트 요소에 이벤트 등록 및 제거
 
-root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 이벤트 리스너의 배열을 관리합니다. _setEvent 함수 내부에서 정의하는 listener 함수는 실제로 루트 요소에 등록될 이벤트 리스너이며 이벤트가 발생했을 때 그 타겟의 eventKey가 인자로 받은 eventKey와 같을 때만 callback 함수를 실행합니다.
+root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 하여 이벤트 리스너의 배열을 관리합니다. _setEvent 함수 내부에서 정의하는 listener 함수는 실제로 루트 요소에 등록될 이벤트 리스너이며 이벤트가 발생했을 때 그 타겟의 eventKey가 인자로 받은 eventKey와 같을 때만 callback 함수를 실행합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setEvent.js"></script>
 
-렌더링을 시작하기 전에 eventListeners 객체에 있는 이벤트 리스너들을 루트 요소에서 제거하고 렌더링을 마친 다음 다시 등록합니다.
+렌더링을 시작하기 전에 기존에 등록된 이벤트 리스너들을 루트 요소에서 제거하고 렌더링을 마친 다음 새롭게 eventListeners 객체에 추가된 이벤트 리스너들을 다시 루트 요소에 등록합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=render.js"></script>
 
