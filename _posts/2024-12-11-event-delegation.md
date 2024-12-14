@@ -95,7 +95,7 @@ root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 하여 이
 
 ### (3) 재렌더링 시 처리
 
-이제 재렌더링을 할 때 이전에 등록한 이벤트 리스너는 삭제되고 새로운 이벤트 리스너가 루트 요소에 등록될 겁니다. 이것으로 끝일까요? 새로운 이벤트 리스너가 루트 요소에 등록될 때 이벤트 리스너 내부에서 참조하는 eventKey는 달라진 반면 버튼 엘리먼트의 eventKey는 그대로입니다. 버튼 엘리먼트에 이 달라진 eventKey를 적용해 주어야 합니다.
+이제 재렌더링을 할 때 이전에 등록된 이벤트 리스너는 삭제되고 새로운 이벤트 리스너가 루트 요소에 등록될 겁니다. 이것으로 끝일까요? 새로운 이벤트 리스너 내부에서 참조하는 eventKey는 달라진 반면 버튼 엘리먼트의 eventKey는 그대로입니다. 버튼 엘리먼트에 이 달라진 eventKey를 적용해 주어야 합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=updateAttributes2.js"></script>
 
