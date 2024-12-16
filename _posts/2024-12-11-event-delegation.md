@@ -85,7 +85,7 @@ toc: true
 
 ### (2) 루트 요소에 이벤트 등록 및 제거
 
-root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 하여 이벤트 리스너의 배열을 관리합니다. _setEvent 함수 내부에서 정의하는 함수는 실제로 루트 요소에 등록될 이벤트 리스너이며 이벤트가 발생했을 때 그 타겟의 eventKey가 인자로 받은 eventKey와 같을 때만 callback 함수를 실행합니다.
+root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 이벤트 리스너의 배열을 갖고 있습니다. _setEvent 함수 내부에서 정의하는 함수는 실제로 루트 요소에 등록될 이벤트 리스너이며 이벤트가 발생했을 때 그 타겟의 eventKey가 인자로 받은 eventKey와 같을 때만 callback 함수를 실행합니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setEvent.js"></script>
 
