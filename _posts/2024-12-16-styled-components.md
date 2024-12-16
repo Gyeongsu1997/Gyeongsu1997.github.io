@@ -20,17 +20,32 @@ toc: true
 const name = '짐 레이너';
 const job = '마사라의 보안관';
 
-const jimRaynor = (texts, ...values) => {
+const introduce = (texts, ...values) => {
   console.log(texts);
   console.log(values);
 }
 
-jimRaynor`제 이름은 ${name}, ${job}입니다.`
+introduce`제 이름은 ${name}, ${job}입니다.`
 ```
 
 ```
 [ '제 이름은 ', ', ', '입니다.' ]
 [ '짐 레이너', '마사라의 보안관' ]
+```
+
+```js
+const name = '짐 레이너';
+const job = '마사라의 보안관';
+
+const introduce = (texts, ...values) => {
+   return texts.reduce((result, text, i) => `${result}${text}${values[i] ? values[i] : ''}`, '');
+}
+const str = introduce`제 이름은 ${name}, ${job}입니다.`
+console.log(str);
+```
+
+```
+제 이름은 짐 레이너, 마사라의 보안관입니다.
 ```
 
 ## Repository
