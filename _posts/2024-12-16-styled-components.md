@@ -10,11 +10,13 @@ toc: true
 
 ## 1. 개요
 
-지금까지 구현한 라이브러리만으로도 웬만한 싱글 페이지 애플리케이션을 만드는 데는 무리가 없을 겁니다. 하지만 뭔가 아쉽습니다. 스타일드 컴포넌트는 대표적인 CSS-in-JS 라이브러리입니다. 스타일드 컴포넌트를 사용하면 CSS 셀렉터가 필요없이 재사용 가능한 컴포넌트를 스타일링 할 수 있습니다.
+아마 지금까지 구현한 라이브러리만으로도 웬만한 싱글 페이지 애플리케이션을 만드는 데는 무리가 없을 겁니다. 하지만 뭔가 아쉽습니다. 스타일드 컴포넌트는 대표적인 CSS-in-JS 라이브러리입니다. 스타일드 컴포넌트를 사용하면 CSS 셀렉터가 필요없이 재사용 가능한 컴포넌트를 스타일링 할 수 있습니다.
 
-## 2. Tagged Template Literal
+## 2. Tagged templates
 
-본격적으로 스타일드 컴포넌트를 구현하기 전에 Tagged Template Literal이라는 문법을 알아보겠습니다. ES6에서 추가된 Template Literal에 대해서는 대부분 익숙하실 것입니다. Tagged Template Literal은
+본격적으로 스타일드 컴포넌트를 구현하기 전에 [tagged templates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates){:target="_blank"}이라는 문법을 알아보겠습니다. ES6에서 추가된 template literals에 대해서는 대부분 익숙하실 것입니다. tagged templates은 발전된 형태의 template literals입니다.
+
+<!-- tagged templates은 tag function -->
 
 ```js
 const name = '짐 레이너';
