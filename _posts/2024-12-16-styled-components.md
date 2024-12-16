@@ -1,0 +1,38 @@
+---
+layout: single
+title:  "바닐라 자바스크립트로 리액트 만들기 - Styled Components"
+category: VanillaJS
+tags:
+  - JavaScript
+  - React
+toc: true
+---
+
+## 1. 개요
+
+지금까지 구현한 라이브러리만으로도 웬만한 SPA을 만드는 데는 무리가 없을 겁니다. 하지만 뭔가 아쉽습니다. 스타일드 컴포넌트는 대표적인 CSS-in-JS 라이브러리입니다. 스타일드 컴포넌트를 사용하면 CSS 셀렉터가 필요없이 재사용 가능한 컴포넌트를 스타일링 할 수 있습니다.
+
+## 2. Tagged Template Literal
+
+본격적으로 스타일드 컴포넌트를 구현하기 전에 Tagged Template Literal이라는 문법을 알아야합니다.
+
+```js
+const name = '짐 레이너';
+const job = '마사라의 보안관';
+
+const jimRaynor = (texts, ...values) => {
+  console.log(texts);
+  console.log(values);
+}
+
+jimRaynor`제 이름은 ${name}, ${job}입니다.`
+```
+
+```
+[ '제 이름은 ', ', ', '입니다.' ]
+[ '짐 레이너', '마사라의 보안관' ]
+```
+
+## Repository
+
+본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/04-event-delegation){:target="_blank"}에서 확인하실 수 있습니다.
