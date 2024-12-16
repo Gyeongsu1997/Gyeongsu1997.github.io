@@ -14,7 +14,7 @@ toc: true
 
 ## 2. Tagged Template Literal
 
-본격적으로 스타일드 컴포넌트를 구현하기 전에 Tagged Template Literal이라는 문법을 알아보겠습니다. ES6에서 추가된 Template Literal에 대해서는 대부분 익숙하실 것입니다.
+본격적으로 스타일드 컴포넌트를 구현하기 전에 Tagged Template Literal이라는 문법을 알아보겠습니다. ES6에서 추가된 Template Literal에 대해서는 대부분 익숙하실 것입니다. Tagged Template Literal은
 
 ```js
 const name = '짐 레이너';
@@ -47,6 +47,8 @@ console.log(str);
 ```
 제 이름은 짐 레이너, 마사라의 보안관입니다.
 ```
+
+Tagged Template Literal의 진가는 드러납니다. Tagged Template Literal을 사용하면 만약 ${} 안에 문자열이나 숫자가 아닌 객체나 함수를 넣어도 값을 조회할 수 있습니다.
 
 ## Repository
 
