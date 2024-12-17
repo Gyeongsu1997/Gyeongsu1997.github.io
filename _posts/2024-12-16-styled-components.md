@@ -62,9 +62,9 @@ const props = {
   job: "마사라의 보안관",
 };
 
-const introduce = (strs, ...exprs) => {
+const introduce = (strs, ...fns) => {
   return strs.reduce(
-    (result, str, i) => `${result}${str}${exprs[i] ? exprs[i](props) : ""}`,
+    (result, str, i) => `${result}${str}${fns[i] ? fns[i](props) : ""}`,
     ""
   );
 };
