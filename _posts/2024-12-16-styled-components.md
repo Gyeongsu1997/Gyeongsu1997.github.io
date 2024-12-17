@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "바닐라 자바스크립트로 리액트 만들기 - Styled Components"
+title: "바닐라 자바스크립트로 리액트 만들기 - Styled Components"
 category: VanillaJS
 tags:
   - JavaScript
@@ -14,20 +14,18 @@ toc: true
 
 ## 2. Tagged templates
 
-본격적으로 스타일드 컴포넌트를 구현하기 전에 [tagged templates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates){:target="_blank"}라는 문법을 알아보겠습니다. ES6에서 추가된 template literals에 대해서는 대부분 익숙하실 것입니다. tagged templates은 발전된 형태의 template literals입니다.
-
-<!-- tagged templates은 tag function -->
+본격적으로 스타일드 컴포넌트를 구현하기 전에 tagged templates라는 문법을 알아보겠습니다. ES6에서 추가된 template literals에 대해서는 대부분 익숙하실 것입니다. tagged template은 일반적인 template literal 앞에 tag function이라고 불리는 함수가 위치하는 형태입니다. 이 tag function 함수의 첫 번째 인자로는 template literals에 포함된 문자열들의 배열이 전달되고, 나머지 인자로는 ${...}로 전달한 값이 전달됩니다. 예시를 보시겠습니다. 사실 tag function을 명시하지 않으면 default function을 string interpolation을 하는 것입니다.
 
 ```js
-const name = '짐 레이너';
-const job = '마사라의 보안관';
+const name = "짐 레이너";
+const job = "마사라의 보안관";
 
 const introduce = (texts, ...values) => {
   console.log(texts);
   console.log(values);
-}
+};
 
-introduce`제 이름은 ${name}, ${job}입니다.`
+introduce`제 이름은 ${name}, ${job}입니다.`;
 ```
 
 ```
@@ -36,13 +34,16 @@ introduce`제 이름은 ${name}, ${job}입니다.`
 ```
 
 ```js
-const name = '짐 레이너';
-const job = '마사라의 보안관';
+const name = "짐 레이너";
+const job = "마사라의 보안관";
 
 const introduce = (texts, ...values) => {
-   return texts.reduce((result, text, i) => `${result}${text}${values[i] ? values[i] : ''}`, '');
-}
-const str = introduce`제 이름은 ${name}, ${job}입니다.`
+  return texts.reduce(
+    (result, text, i) => `${result}${text}${values[i] ? values[i] : ""}`,
+    ""
+  );
+};
+const str = introduce`제 이름은 ${name}, ${job}입니다.`;
 console.log(str);
 ```
 
@@ -54,6 +55,6 @@ Tagged Template Literal의 진가는 드러납니다. Tagged Template Literal을
 
 ## Repository
 
-본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/04-event-delegation){:target="_blank"}에서 확인하실 수 있습니다.
+본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/04-event-delegation){:target="\_blank"}에서 확인하실 수 있습니다.
 
 ## Reference
