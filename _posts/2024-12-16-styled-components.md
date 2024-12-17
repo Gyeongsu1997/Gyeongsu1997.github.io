@@ -14,7 +14,7 @@ toc: true
 
 ## 2. Tagged templates
 
-본격적으로 스타일드 컴포넌트를 구현하기 전에 tagged templates라는 문법을 알아보겠습니다. ES6에서 추가된 template literals에 대해서는 대부분 익숙하실 것입니다. tagged template은 일반적인 template literal 앞에 tag function이라 불리는 함수가 존재하는 형태입니다. 그러한 경우에는 template literal이 쪼개져서 tag function의 인자로 전달되고 함수 안에서 원하는 작업을 수행할 수 있습니다. 사실 tag function을 명시하지 않았을 때는 기본적으로 default function이 사용되고 있는 것입니다. 예시를 들어보겠습니다.
+본격적으로 스타일드 컴포넌트를 구현하기 전에 태그드 템플릿이라는 문법을 알아보겠습니다. ES6에서 추가된 템플릿 리터럴에 대해서는 대부분 익숙하실 것입니다. 태그드 템플릿은 일반적인 템플릿 리터럴 앞에 tag function이라 불리는 함수가 존재하는 형태입니다. 그러한 경우에는 템플릿 리터럴이 쪼개져서 tag function의 인자로 전달되고 함수 안에서 원하는 작업을 수행할 수 있습니다. 사실 tag function을 명시하지 않았을 때는 기본적으로 default function이 사용되고 있는 것입니다. 예시를 들어보겠습니다.
 
 ```js
 const name = "짐 레이너";
@@ -51,7 +51,7 @@ console.log(str);
 제 이름은 짐 레이너, 마사라의 보안관입니다.
 ```
 
-여기까지만 보면 일반적인 template literals을 사용하는 것과 어떤 차이가 있는 지 모를 수 있습니다. tagged templates의 진가는 드러납니다. tagged templates을 사용하면 만약 ${...} 안에 문자열이나 숫자가 아닌 객체나 함수를 넣어도 값을 조회할 수 있습니다.
+여기까지만 보면 일반적인 템플릿 리터럴을 사용하는 것과 어떤 차이가 있는 지 모를 수 있습니다. 태그드 템플릿의 진가는 드러납니다. 태그드 템플릿을 사용하면 만약 ${...} 안에 문자열이나 숫자가 아닌 객체나 함수를 넣어도 값을 조회할 수 있습니다.
 
 ## Repository
 
