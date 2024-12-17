@@ -14,7 +14,7 @@ toc: true
 
 ## 2. Tagged templates
 
-본격적으로 스타일드 컴포넌트를 구현하기 전에 tagged templates라는 문법을 알아보겠습니다. ES6에서 추가된 template literals에 대해서는 대부분 익숙하실 것입니다. tagged template은 일반적인 template literal 앞에 tag function이라고 불리는 함수가 존재하는 형태입니다. 이 tag function 함수의 첫 번째 인자로는 template literals에 포함된 문자열들의 배열이 전달되고, 나머지 인자로는 ${...}로 전달한 값이 전달됩니다. 사실 tag function을 명시하지 않으면 default function이 사용되고 있는 것입니다. 예시를 들어보겠습니다.
+본격적으로 스타일드 컴포넌트를 구현하기 전에 tagged templates라는 문법을 알아보겠습니다. ES6에서 추가된 template literals에 대해서는 대부분 익숙하실 것입니다. tagged template은 일반적인 template literal 앞에 tag function이라 불리는 함수가 존재하는 형태입니다. 이 함수의 첫 번째 인자로는 template literal에 포함된 문자열들의 배열이 전달되고, 나머지 인자로는 ${...}로 전달한 값이 전달됩니다. 사실 tag function을 명시하지 않으면 default function이 사용되고 있는 것입니다. 예시를 들어보겠습니다.
 
 ```js
 const name = "짐 레이너";
