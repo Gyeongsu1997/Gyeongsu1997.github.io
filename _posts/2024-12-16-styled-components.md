@@ -20,9 +20,9 @@ toc: true
 const name = "짐 레이너";
 const job = "마사라의 보안관";
 
-const introduce = (texts, ...values) => {
-  console.log(texts);
-  console.log(values);
+const introduce = (strs, ...exprs) => {
+  console.log(strs);
+  console.log(exprs);
 };
 
 introduce`제 이름은 ${name}, ${job}입니다.`;
@@ -39,12 +39,13 @@ introduce`제 이름은 ${name}, ${job}입니다.`;
 const name = "짐 레이너";
 const job = "마사라의 보안관";
 
-const introduce = (texts, ...values) => {
-  return texts.reduce(
-    (result, text, i) => `${result}${text}${values[i] ? values[i] : ""}`,
+const introduce = (strs, ...exprs) => {
+  return strs.reduce(
+    (result, str, i) => `${result}${str}${exprs[i] ? exprs[i] : ""}`,
     ""
   );
 };
+
 const str = introduce`제 이름은 ${name}, ${job}입니다.`;
 console.log(str);
 ```
@@ -54,6 +55,28 @@ console.log(str);
 ```
 
 여기까지만 보면 일반적인 템플릿 리터럴을 사용하는 것과 어떤 차이가 있는 지 모를 수 있습니다. 태그드 템플릿의 진가는 드러납니다. 태그드 템플릿을 사용하면 표현식으로 문자열이나 숫자가 아닌 객체나 함수를 넣어도 값을 조회할 수 있습니다.
+
+```js
+const props = {
+  name: "짐 레이너",
+  job: "마사라의 보안관",
+};
+
+const introduce = (strs, ...exprs) => {
+  return strs.reduce(
+    (result, str, i) => `${result}${str}${exprs[i] ? exprs[i](props) : ""}`,
+    ""
+  );
+};
+
+const str = introduce`제 이름은 ${(props) => props.name}, ${(props) =>
+  props.job}입니다.`;
+console.log(str);
+```
+
+```
+제 이름은 짐 레이너, 마사라의 보안관입니다.
+```
 
 ## Repository
 
