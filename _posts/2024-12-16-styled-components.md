@@ -75,6 +75,8 @@ console.log(str);
 
 ## 3. styled-components
 
+styled는 함수를 반환하는 고차함수 형태입니다.
+
 ```js
 const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
     const style = strs.reduce((result, str, i) => {
@@ -90,26 +92,7 @@ const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
 
 아래처럼 사용할 수 있습니다.
 
-```js
-const Circle = styled('div')`
-	width: 200px;
-	height: 200px;
-	border: 5px solid;
-	border-radius: 50%;
-	color: white;
-	background-color: black;
-	text-align: center;
-	line-height: 200px;
-`;
-
-function App() {
-	return (
-		<Circle>
-			Hello, World!
-		</Circle>
-	);
-};
-```
+<script src="https://gist.github.com/Gyeongsu1997/988944758866b595b9168e728366f359.js?file=App.js"></script>
 
 <iframe src="https://codesandbox.io/embed/nvnky2?view=preview&module=%2Findex.html&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
