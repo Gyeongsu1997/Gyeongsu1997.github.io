@@ -73,9 +73,17 @@ console.log(str);
 
 위처럼 태그드 템플릿을 사용하면 표현식으로 문자열이나 숫자가 아닌 객체나 함수를 넣어도 값을 조회할 수 있습니다.
 
-## 3. styled-components
+## 3. Styled Components
 
-styled-components의 styled 함수는 요소 이름을 인자로 받아 함수를 반환하는 고차 함수입니다. 여기서 반환되는 함수는 tag function으로 사용되며 함수 컴포넌트를 반환합니다.
+styled-components의 styled 함수는 HTML 요소 이름을 인자로 받아 위에서 본 tag function을 반환합니다.
+
+```js
+const styled = (type) => (strs, ...exprs) => {
+  /* 생략 */
+};
+```
+
+그리고 이 함수는 다시 함수 컴포넌트를 반환하는 함수입니다.
 
 ```js
 const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
