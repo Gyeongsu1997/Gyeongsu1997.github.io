@@ -79,7 +79,12 @@ styled-components의 styled 함수는 HTML 요소 이름을 인자로 받아 위
 
 ```js
 const styled = (type) => (strs, ...exprs) => {
-  /* 생략 */
+  return strs.reduce((result, str, i) => {
+      const isFunc = typeof exprs[i] === 'function';
+      const value = isFunc ? exprs[i](props) : exprs[i];
+
+      return `${result}${str}${value ? value : ''}`;
+    }, '');
 };
 ```
 
