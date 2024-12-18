@@ -84,6 +84,13 @@ console.log(str);
 
 <script src="https://gist.github.com/Gyeongsu1997/988944758866b595b9168e728366f359.js?file=App.js"></script>
 
+<iframe src="https://codesandbox.io/embed/nvnky2?view=preview&module=%2Findex.html&hidenavigation=1"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="05-styled-components"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
 ## Repository
 
 본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/04-event-delegation){:target="\_blank"}에서 확인하실 수 있습니다.
