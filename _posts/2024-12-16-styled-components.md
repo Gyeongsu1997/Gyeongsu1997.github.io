@@ -75,7 +75,7 @@ console.log(str);
 
 ## 3. Styled Components
 
-styled-components의 styled 함수는 HTML 요소 이름을 인자로 받아 위에서 본 tag function을 반환합니다.
+styled-components의 styled 함수는 HTML 요소 이름을 인자로 받아 tag function으로 사용되는 함수를 반환합니다.
 
 ```js
 const styled = (type) => (strs, ...exprs) => {
@@ -88,7 +88,7 @@ const styled = (type) => (strs, ...exprs) => {
 };
 ```
 
-그리고 이 함수는 다시 함수 컴포넌트를 반환하는 함수입니다.
+그리고 이 함수는 사실 다시 함수 컴포넌트를 반환하는 함수입니다.
 
 ```js
 const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
