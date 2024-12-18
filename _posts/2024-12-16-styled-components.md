@@ -75,7 +75,41 @@ console.log(str);
 
 ## 3. styled-components
 
-<script src="https://gist.github.com/Gyeongsu1997/988944758866b595b9168e728366f359.js?file=App.js"></script>
+```js
+const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
+    const style = strs.reduce((result, str, i) => {
+      const isFunc = typeof exprs[i] === 'function';
+      const value = isFunc ? exprs[i](props) : exprs[i];
+
+      return `${result}${str}${value ? value : ''}`;
+    }, '');
+
+    return React.createElement(type, { ...props, style }, children);
+};
+```
+
+아래처럼 사용할 수 있습니다.
+
+```js
+const Circle = styled('div')`
+	width: 200px;
+	height: 200px;
+	border: 5px solid;
+	border-radius: 50%;
+	color: white;
+	background-color: black;
+	text-align: center;
+	line-height: 200px;
+`;
+
+function App() {
+	return (
+		<Circle>
+			Hello, World!
+		</Circle>
+	);
+};
+```
 
 <iframe src="https://codesandbox.io/embed/nvnky2?view=preview&module=%2Findex.html&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -83,6 +117,8 @@ console.log(str);
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+
+그런데 styed.div 형식으로 사용하고 싶으면 어떻게 해야할까요?
 
 ## Repository
 
