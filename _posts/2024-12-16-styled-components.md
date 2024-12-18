@@ -75,6 +75,8 @@ console.log(str);
 
 ## 3. Styled Components
 
+### (1) styled
+
 styled-components의 styled 함수는 HTML 요소 이름을 인자로 받아 tag function으로 사용되는 함수를 반환합니다.
 
 ```js
@@ -139,6 +141,8 @@ const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+
+### (2) styled.div
 
 그런데 styed.div 형식으로 사용하고 싶으면 어떻게 해야할까요?
 
