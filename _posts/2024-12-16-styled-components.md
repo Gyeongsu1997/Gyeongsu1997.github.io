@@ -121,3 +121,5 @@ const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
 본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/04-event-delegation){:target="\_blank"}에서 확인하실 수 있습니다.
 
 ## Reference
+
+- [styled-components는 어떻게 동작할까?](https://john015.netlify.app/styled-components%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%A0%EA%B9%8C){:target="_blank"}
