@@ -80,6 +80,10 @@ console.log(str);
 
 위처럼 태그드 템플릿을 사용하면 표현식으로 문자열이나 숫자가 아닌 객체나 함수를 넣어도 값을 조회할 수 있습니다.
 
+## 3. styled-components
+
+<script src="https://gist.github.com/Gyeongsu1997/988944758866b595b9168e728366f359.js?file=App.js"></script>
+
 ## Repository
 
 본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/04-event-delegation){:target="\_blank"}에서 확인하실 수 있습니다.
