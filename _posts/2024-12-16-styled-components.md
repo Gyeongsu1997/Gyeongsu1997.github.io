@@ -75,7 +75,7 @@ console.log(str);
 
 ## 3. styled-components
 
-styled는 함수를 반환하는 고차함수 형태입니다.
+styled-components의 styled 함수는 요소 이름을 인자로 받아 함수를 반환하는 고차 함수입니다. 여기서 반환되는 함수는 tag function으로 사용되며 함수 컴포넌트를 반환합니다.
 
 ```js
 const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
