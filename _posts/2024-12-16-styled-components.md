@@ -79,13 +79,39 @@ styled-components의 styled 함수는 HTML 요소 이름을 인자로 받아 tag
 
 ```js
 const styled = (type) => (strs, ...exprs) => {
-  return strs.reduce((result, str, i) => {
-      const isFunc = typeof exprs[i] === 'function';
-      const value = isFunc ? exprs[i](props) : exprs[i];
-
-      return `${result}${str}${value ? value : ''}`;
-    }, '');
+    return strs.reduce((result, str, i) => {
+        const isFunc = typeof exprs[i] === 'function';
+        const value = isFunc ? exprs[i](props) : exprs[i];
+  
+        return `${result}${str}${value ? value : ''}`;
+      }, '');
 };
+
+const style = styled('div')`
+	width: 200px;
+	height: 200px;
+	border: 5px solid;
+	border-radius: 50%;
+	color: white;
+	background-color: black;
+	text-align: center;
+	line-height: 200px;
+`;
+
+console.log(style);
+```
+
+```
+
+        width: 200px;
+        height: 200px;
+        border: 5px solid;
+        border-radius: 50%;
+        color: white;
+        background-color: black;
+        text-align: center;
+        line-height: 200px;
+
 ```
 
 그리고 이 함수는 사실 다시 함수 컴포넌트를 반환하는 함수입니다.
@@ -115,6 +141,8 @@ const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
 ></iframe>
 
 그런데 styed.div 형식으로 사용하고 싶으면 어떻게 해야할까요?
+
+
 
 ## Repository
 
