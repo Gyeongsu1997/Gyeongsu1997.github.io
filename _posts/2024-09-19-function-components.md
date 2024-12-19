@@ -18,11 +18,11 @@ toc: true
 
 <script src="https://gist.github.com/Gyeongsu1997/514e5909c3bb1e8b7116b2d39868b346.js?file=index.html"></script>
 
-- MyElement.js
+- src/MyElement.js
 
 <script src="https://gist.github.com/Gyeongsu1997/514e5909c3bb1e8b7116b2d39868b346.js?file=MyElement.js"></script>
 
-- StyledComponents.js
+- src/StyledComponents.js
 
 <script src="https://gist.github.com/Gyeongsu1997/514e5909c3bb1e8b7116b2d39868b346.js?file=StyledComponents.js"></script>
 
