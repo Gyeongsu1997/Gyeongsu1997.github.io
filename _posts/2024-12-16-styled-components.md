@@ -225,6 +225,9 @@ export default App;
 
 ### (3) props로 함수가 들어올 때
 
+앞서 태그드 템플릿을 사용하면 표현식으로 문자열이나 숫자가 아닌 객체나 함수를 넣어도 값을 조회할 수 있다고 했습니다.
+
+
 ## Repository
 
 본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/04-event-delegation){:target="\_blank"}에서 확인하실 수 있습니다.
