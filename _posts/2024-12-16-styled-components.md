@@ -75,7 +75,7 @@ console.log(str);
 
 ## 3. Styled Components
 
-### (1) styled 함수
+### (1) 고차 함수 styled
 
 styled-components의 styled 함수는 HTML 요소의 이름을 인자로 받아 tag function으로 사용되는 함수를 반환합니다.
 
