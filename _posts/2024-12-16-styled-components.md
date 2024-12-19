@@ -118,7 +118,7 @@ console.log(style);
 
 ```
 
-사실 이 함수는 스타일을 문자열로 반환하지 않고 함수 컴포넌트를 반환합니다. 반환된 함수 컴포넌트가 렌더링되는 시점에 스타일이 적용됩니다.
+사실 이 함수가 스타일을 문자열로 반환하지는 않습니다. 그 대신 앞서 전달한 HTML 요소를 렌더링하는 함수 컴포넌트를 반환하고, 반환된 함수 컴포넌트가 렌더링되면서 스타일이 적용됩니다.
 
 ```js
 const styled = (tag) => (strs, ...exprs) => ({ children, ...props }) => {
@@ -146,7 +146,7 @@ const styled = (tag) => (strs, ...exprs) => ({ children, ...props }) => {
 
 ### (2) styled.div
 
-그런데 위에서 본 방법은 일반적으로 알고 있는 styled-components의 사용 방법과 조금 다릅니다. styed.div 형식으로 사용하고 싶으면 어떻게 해야할까요?
+그런데 위에서 본 styled 함수는 일반적으로 styled-components의 styled 함수를 사용하는 방법과 조금 다릅니다. 일반적으로 사용되는 styed.div와 같은 형식으로 styled 함수를 사용하고 싶으면 어떻게 해야할까요?
 
 
 
