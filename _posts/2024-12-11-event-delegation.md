@@ -118,4 +118,4 @@ root.js에 있는 eventListeners 객체는 이벤트 이름을 키로 이벤트 
 
 ## Repository
 
-본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/04-event-delegation){:target="_blank"}에서 확인하실 수 있습니다.
+본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/04-event-delegation){:target="_blank"}에서 확인하실 수 있습니다.
