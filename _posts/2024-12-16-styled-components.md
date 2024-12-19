@@ -75,7 +75,7 @@ console.log(str);
 
 ## 3. Styled Components
 
-### (1) styled
+### (1) styled 함수
 
 styled-components의 styled 함수는 HTML 요소의 이름을 인자로 받아 tag function으로 사용되는 함수를 반환합니다.
 
@@ -118,7 +118,7 @@ console.log(style);
 
 ```
 
-그런데 사실 이 함수가 스타일을 문자열로 반환하지는 않습니다. 그 대신 앞서 전달한 HTML 요소를 렌더링하는 함수 컴포넌트를 반환하고, 반환된 함수 컴포넌트가 렌더링되면서 스타일이 적용됩니다.
+그런데 이 함수가 스타일을 문자열로 반환하는 건 아닙니다. 그 대신 앞서 전달한 HTML 요소를 렌더링하는 함수 컴포넌트를 반환하고, 반환된 함수 컴포넌트가 렌더링되면서 스타일이 적용됩니다.
 
 ```js
 const styled = (tag) => (strs, ...exprs) => ({ children, ...props }) => {
@@ -146,9 +146,65 @@ const styled = (tag) => (strs, ...exprs) => ({ children, ...props }) => {
 
 ### (2) styled.div
 
-그런데 위에서 본 styled 함수는 일반적으로 styled-components의 styled 함수를 사용하는 방법과 조금 다릅니다. 일반적으로 사용되는 styed.div와 같은 형식으로 styled 함수를 사용하고 싶으면 어떻게 해야할까요?
+그런데 위에서 본 styled 함수는 일반적으로 styled-components의 styled 함수를 사용하는 방법과 조금 다릅니다. 일반적으로 사용되는 ```styled.div```와 같은 형식으로 styled 함수를 사용하고 싶으면 어떻게 해야할까요? 여기에서 자바스크립트의 함수형 프로그래밍 언어로서의 특성이 잘 드러납니다. 바로 styled 함수의 프로퍼티로 함수를 넣어주면 됩니다.
 
+```js
+const elements = [
+    'a',
+    'article',
+    'aside',
+    'body',
+    'button',
+    'div',
+    'footer',
+    'form',
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+    'header',
+    'html',
+    'i',
+    'iframe',
+    'img',
+    'input',
+    'label',
+    'li',
+    'link',
+    'meta',
+    'nav',
+    'p',
+    'script',
+    'section',
+    'source',
+    'span',
+    'strong',
+    'style',
+    'summary',
+    'table',
+    'td',
+    'textarea',
+    'th',
+    'thead',
+    'tr',
+    'ul',
+    'image',
+    'svg',
+    'text',
+];
+  
+const domElements = new Set(elements);
 
+domElements.forEach(domElement => {
+	styled[domElement] = styled(domElement);
+});
+```
+
+위와 같이 styled에 메소드를 만들어주면 됩니다.
+
+### (3) styled.div
 
 ## Repository
 
