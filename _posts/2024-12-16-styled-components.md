@@ -146,7 +146,7 @@ const styled = (tag) => (strs, ...exprs) => ({ children, ...props }) => {
 
 ### (2) styled.div
 
-그런데 위에서 본 styled 함수는 일반적으로 styled-components의 styled 함수를 사용하는 방법과 조금 다릅니다. 일반적으로 사용되는 ```styled.div```와 같은 형식으로 styled 함수를 사용하고 싶으면 어떻게 해야할까요? 여기에서 자바스크립트의 함수형 프로그래밍 언어로서의 특성이 잘 드러납니다. 바로 styled 함수의 프로퍼티로 함수를 넣어주면 됩니다.
+그런데 위에서 본 styled 함수는 일반적으로 styled-components의 styled 함수를 사용하는 방법과 조금 다릅니다. 일반적으로 사용되는 ```styled.div```와 같은 형식으로 styled 함수를 사용하고 싶으면 어떻게 해야할까요? 여기에서 자바스크립트의 함수형 프로그래밍 언어로서의 특성이 잘 드러납니다. 바로 styled 함수에 div 등의 HTML 요소를 이름으로 갖는 메서드를 만들어주는 것입니다.
 
 ```js
 const elements = [
@@ -178,21 +178,13 @@ const elements = [
     'p',
     'script',
     'section',
-    'source',
     'span',
     'strong',
     'style',
-    'summary',
-    'table',
-    'td',
     'textarea',
-    'th',
-    'thead',
-    'tr',
     'ul',
     'image',
-    'svg',
-    'text',
+    ...
 ];
   
 const domElements = new Set(elements);
@@ -202,7 +194,7 @@ domElements.forEach(domElement => {
 });
 ```
 
-위와 같이 styled에 메소드를 만들어주면 됩니다.
+위와 같이 styled 함수에 DOM 요소의 이름을 갖는 메소드를 넣어주면 아래처럼 사용할 수 있습니다.
 
 ```js
 /** @jsx React.createElement */
