@@ -12,7 +12,7 @@ toc: true
 
 스타일드 컴포넌트는 대표적인 CSS-in-JS 라이브러리입니다. 스타일드 컴포넌트를 사용하면 CSS 셀렉터가 필요없이 재사용 가능한 컴포넌트를 스타일링 할 수 있습니다.
 
-## 2. Tagged templates
+## 2. Tagged Templates
 
 본격적으로 스타일드 컴포넌트를 구현하기 전에 태그드 템플릿이라는 문법을 알아보겠습니다. ES6에서 추가된 템플릿 리터럴에 대해서는 대부분 익숙하실 것입니다. 태그드 템플릿은 일반적인 템플릿 리터럴 앞에 tag function이라 불리는 함수가 위치하고 있는 형태입니다. 태그드 템플릿에서는 tag function 뒤의 템플릿 리터럴이 분해되어 tag function의 인자로 전달되고 이 함수 안에서 원하는 작업을 수행할 수 있습니다. 사실 tag function을 명시하지 않은 템플릿 리터럴에서는 기본적으로 default function이 사용되고 있는 것입니다. 예시를 들어보겠습니다.
 
@@ -77,16 +77,18 @@ console.log(str);
 
 ### (1) styled
 
-styled-components의 styled 함수는 HTML 요소 이름을 인자로 받아 tag function으로 사용되는 함수를 반환합니다.
+styled-components의 styled 함수는 HTML 요소의 이름을 인자로 받아 tag function으로 사용되는 함수를 반환합니다.
 
 ```js
-const styled = (type) => (strs, ...exprs) => {
-    return strs.reduce((result, str, i) => {
+const styled = (tag) => (strs, ...exprs) => {
+    const style = strs.reduce((result, str, i) => {
         const isFunc = typeof exprs[i] === 'function';
         const value = isFunc ? exprs[i](props) : exprs[i];
   
         return `${result}${str}${value ? value : ''}`;
       }, '');
+
+    return style;
 };
 
 const style = styled('div')`
@@ -116,10 +118,10 @@ console.log(style);
 
 ```
 
-그리고 이 함수는 사실 다시 함수 컴포넌트를 반환하는 함수입니다.
+사실 이 함수는 스타일을 문자열로 반환하지 않고 함수 컴포넌트를 반환합니다. 반환된 함수 컴포넌트가 렌더링되는 시점에 스타일이 적용됩니다.
 
 ```js
-const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
+const styled = (tag) => (strs, ...exprs) => ({ children, ...props }) => {
     const style = strs.reduce((result, str, i) => {
       const isFunc = typeof exprs[i] === 'function';
       const value = isFunc ? exprs[i](props) : exprs[i];
@@ -127,7 +129,7 @@ const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
       return `${result}${str}${value ? value : ''}`;
     }, '');
 
-    return React.createElement(type, { ...props, style }, children);
+    return React.createElement(tag, { ...props, style }, children);
 };
 ```
 
@@ -144,7 +146,7 @@ const styled = (type) => (strs, ...exprs) => ({ children, ...props }) => {
 
 ### (2) styled.div
 
-그런데 styed.div 형식으로 사용하고 싶으면 어떻게 해야할까요?
+그런데 위에서 본 방법은 일반적으로 알고 있는 styled-components의 사용 방법과 조금 다릅니다. styed.div 형식으로 사용하고 싶으면 어떻게 해야할까요?
 
 
 
