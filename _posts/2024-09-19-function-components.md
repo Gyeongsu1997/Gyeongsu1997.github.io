@@ -246,7 +246,7 @@ index.js는 위에서 만든 ReactDOM.render 함수에 루트 엘리먼트와 �
 
 ## Repository
 
-본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/01-function-components){:target="_blank"}에서 확인하실 수 있습니다.
+본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/01-function-components){:target="_blank"}에서 확인하실 수 있습니다.
 
 ## Reference
 
