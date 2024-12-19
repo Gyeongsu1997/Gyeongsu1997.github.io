@@ -87,7 +87,7 @@ _updateAttributes 함수는 새 자식 노드에서 달라진 속성과 없어�
 
 ## Repository
 
-본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/03-diffing-algorithm){:target="_blank"}에서 확인하실 수 있습니다.
+본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/03-diffing-algorithm){:target="_blank"}에서 확인하실 수 있습니다.
 
 ## Reference
 
