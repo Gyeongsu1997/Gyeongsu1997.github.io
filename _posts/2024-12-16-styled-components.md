@@ -182,7 +182,7 @@ domElements.forEach(domElement => {
 
 <script src="https://gist.github.com/Gyeongsu1997/988944758866b595b9168e728366f359.js?file=styled.div.js"></script>
 
-결국 styled-components를 ```styled.div```와 같은 형식으로 사용하는 것은 styled 함수에 메서드로 할당해 놓은 ```styled('div')`` 함수를 사용하는 것입니다.
+결국 styled-components를 ```styled.div```와 같은 형식으로 사용하는 것은 styled 함수에 메서드로 할당해 놓은 ```styled('div')``` 함수를 사용하는 것입니다.
 
 ### (3) 함수 표현식 사용
 
