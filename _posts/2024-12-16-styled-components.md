@@ -209,12 +209,41 @@ export default App;
 
 ### (3) props로 함수가 들어올 때
 
-앞서 태그드 템플릿을 사용하면 표현식으로 문자열이나 숫자가 아닌 객체나 함수를 넣어도 값을 조회할 수 있다고 했습니다.
+앞서 태그드 템플릿을 사용하면 표현식으로 문자열이나 숫자가 아닌 객체나 함수를 넣어도 값을 조회할 수 있다고 했습니다. 표현식으로 함수를 넣었을 때 이를 사용하는 예시를 보겠습니다.
 
+```js
+/** @jsx React.createElement */
+import React from './core/react.js';
+import styled from './core/styled-components.js';
+
+const Circle = styled.div`
+  width: 200px;
+  height: 200px;
+  border: 5px solid;
+  border-radius: 50%;
+  ${(props) =>
+    props.theme === 'black' && 'color: white; background-color: black;'}
+  text-align: center;
+  line-height: 200px;
+`;
+
+function App() {
+  return (
+    <div>
+      <Circle theme="black">Hello, World!</Circle>
+      <Circle>안녕하세요</Circle>
+    </div>
+  );
+}
+
+export default App;
+```
+
+(iframe)
 
 ## Repository
 
-본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/main/04-event-delegation){:target="\_blank"}에서 확인하실 수 있습니다.
+본 게시글에서 사용된 코드는 [이곳](https://github.com/Gyeongsu1997/create-react-with-vanilla-js/tree/05-styled-components){:target="\_blank"}에서 확인하실 수 있습니다.
 
 ## Reference
 
