@@ -150,41 +150,39 @@ const styled = (tag) => (strs, ...exprs) => ({ children, ...props }) => {
 
 ```js
 const elements = [
-    'a',
-    'article',
-    'aside',
-    'body',
-    'button',
-    'div',
-    'footer',
-    'form',
-    'h1',
-    'h2',
-    'h3',
-    'h4',
-    'h5',
-    'h6',
-    'header',
-    'html',
-    'i',
-    'iframe',
-    'img',
-    'input',
-    'label',
-    'li',
-    'link',
-    'meta',
-    'nav',
-    'p',
-    'script',
-    'section',
-    'span',
-    'strong',
-    'style',
-    'textarea',
-    'ul',
-    'image',
-    ...
+  'a',
+  'article',
+  'aside',
+  'body',
+  'button',
+  'div',
+  'footer',
+  'form',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'header',
+  'html',
+  'i',
+  'iframe',
+  'img',
+  'input',
+  'label',
+  'li',
+  'link',
+  'nav',
+  'p',
+  'script',
+  'section',
+  'span',
+  'style',
+  'textarea',
+  'ul',
+  'image',
+  ...
 ];
   
 const domElements = new Set(elements);
@@ -194,7 +192,7 @@ domElements.forEach(domElement => {
 });
 ```
 
-위와 같이 styled 함수에 DOM 요소의 이름을 갖는 메서드를 넣어주면 아래처럼 사용할 수 있습니다.
+위와 같이 styled 함수에 DOM 요소의 이름으로 메서드를 만들어주면 아래처럼 사용할 수 있습니다.
 
 ```js
 /** @jsx React.createElement */
