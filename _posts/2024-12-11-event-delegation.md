@@ -31,7 +31,7 @@ toc: true
 
 이럴 수가. count 값이 계속 0으로 나옵니다. 도대체 왜 이런 일이 발생하는 걸까요? 문제는 새로 도입한 diffing algorithm과 기존의 이벤트 등록 방식 사이의 간극으로 인해 발생합니다.
 
-버튼 컴포넌트에 onClick prop으로 전달한 이벤트 리스너는 아래의 _setAttributes 함수에서 addEventListener API를 이용해 버튼 엘리먼트에 등록됩니다.
+버튼 컴포넌트에 onClick 속성으로 전달한 이벤트 리스너는 아래의 _setAttributes 함수에서 addEventListener API를 이용해 버튼 엘리먼트에 등록됩니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/d6f4e4b88ae7231ef8b4cf55bb54b668.js?file=setAttributes.js"></script>
 
