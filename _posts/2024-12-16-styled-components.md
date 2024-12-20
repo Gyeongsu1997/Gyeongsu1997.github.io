@@ -135,7 +135,7 @@ const styled = (tag) => (strs, ...exprs) => ({ children, ...props }) => {
 
 아래처럼 사용할 수 있습니다.
 
-<script src="https://gist.github.com/Gyeongsu1997/988944758866b595b9168e728366f359.js?file=App.js"></script>
+<script src="https://gist.github.com/Gyeongsu1997/988944758866b595b9168e728366f359.js?file=styled.js"></script>
 
 <iframe src="https://codesandbox.io/embed/nvnky2?view=preview&module=%2Findex.html&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -180,36 +180,13 @@ domElements.forEach(domElement => {
 
 위와 같이 styled 함수에 DOM 요소의 이름으로 메서드를 만들어주면 아래처럼 사용할 수 있습니다.
 
-```js
-/** @jsx React.createElement */
-import React from "./core/react.js";
-import styled from "./core/styled-components.js";
+<script src="https://gist.github.com/Gyeongsu1997/988944758866b595b9168e728366f359.js?file=styled.div.js"></script>
 
-const Circle = styled.div`
-	width: 200px;
-	height: 200px;
-	border: 5px solid;
-	border-radius: 50%;
-	color: white;
-	background-color: black;
-	text-align: center;
-	line-height: 200px;
-`;
+결국 styled-components를 ```styled.div```와 같은 형식으로 사용하는 것은 styled 함수에 메서드로 할당해 놓은 ```styled('div')`` 함수를 사용하는 것입니다.
 
-function App() {
-	return (
-		<Circle>
-			Hello, World!
-		</Circle>
-	);
-};
+### (3) 함수 표현식 사용
 
-export default App;
-```
-
-### (3) props로 함수가 들어올 때
-
-앞서 태그드 템플릿을 사용하면 표현식으로 문자열이나 숫자가 아닌 객체나 함수를 넣어도 값을 조회할 수 있다고 했습니다. 표현식으로 함수를 넣었을 때 이를 사용하는 예시를 보겠습니다.
+앞서 태그드 템플릿을 사용하면 표현식으로 객체나 함수를 넣어도 값을 조회할 수 있다고 했습니다. 표현식으로 함수를 넣었을 때 이를 사용하는 예시를 보겠습니다.
 
 ```js
 /** @jsx React.createElement */
