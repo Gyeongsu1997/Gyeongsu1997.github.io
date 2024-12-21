@@ -144,7 +144,7 @@ const styled = (tag) => (strs, ...exprs) => ({ children, ...props }) => {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-### (2) 함수형 언어 자바스크립트
+### (2) styled 함수의 비밀
 
 그런데 위에서 본 styled 함수는 일반적으로 styled-components의 styled 함수를 사용하는 방법과 조금 다릅니다. 일반적으로 사용되는 ```styled.div```와 같은 형식으로 styled 함수를 사용하고 싶으면 어떻게 해야할까요? 여기서 자바스크립트의 함수형 프로그래밍 언어로서의 특성이 잘 드러납니다. 바로 styled 함수에 div 등 HTML 요소의 이름으로 메서드를 만들어주는 것입니다.
 
@@ -155,11 +155,6 @@ const elements = [
   'div',
   'form',
   'h1',
-  'h2',
-  'h3',
-  'h4',
-  'h5',
-  'h6',
   'header',
   'img',
   'input',
@@ -167,7 +162,6 @@ const elements = [
   'p',
   'span',
   'ul',
-  'image',
   ...
 ];
   
