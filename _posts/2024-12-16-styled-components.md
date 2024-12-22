@@ -182,33 +182,7 @@ domElements.forEach(domElement => {
 
 앞서 태그드 템플릿을 사용하면 표현식으로 객체나 함수를 전달해도 그 값을 조회할 수 있다고 했습니다. 이를 이용하면 아래와 같이 표현식으로 전달한 함수를 사용하여 스타일이 props에 따라 동적으로 달라지게 만들 수 있습니다.
 
-```js
-/** @jsx React.createElement */
-import React from './core/react.js';
-import styled from './core/styled-components.js';
-
-const Circle = styled.div`
-  width: 200px;
-  height: 200px;
-  border: 5px solid;
-  border-radius: 50%;
-  ${(props) =>
-    props.theme === 'black' && 'color: white; background-color: black;'}
-  text-align: center;
-  line-height: 200px;
-`;
-
-function App() {
-  return (
-    <div>
-      <Circle theme="black">Hello, World!</Circle>
-      <Circle>안녕하세요</Circle>
-    </div>
-  );
-}
-
-export default App;
-```
+<script src="https://gist.github.com/Gyeongsu1997/988944758866b595b9168e728366f359.js?file=dynamic-styling.js"></script>
 
 <iframe src="https://codesandbox.io/embed/jwg5pw?view=preview&hidenavigation=1"
      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
