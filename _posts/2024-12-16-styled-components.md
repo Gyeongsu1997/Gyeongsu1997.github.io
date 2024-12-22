@@ -180,7 +180,7 @@ domElements.forEach(domElement => {
 
 ### (3) 동적 스타일링
 
-앞서 태그드 템플릿을 사용하면 표현식으로 객체나 함수를 전달해도 그 값을 조회할 수 있다고 했습니다. 아래와 같이 표현식으로 함수를 전달했을 때 props를 사용해 추가적인 작업을 할 수 있습니다. 이를 사용하는 예시를 보겠습니다.
+앞서 태그드 템플릿을 사용하면 표현식으로 객체나 함수를 전달해도 그 값을 조회할 수 있다고 했습니다. 아래와 같이 표현식으로 함수를 사용하면 스타일이 props에 따라 동적으로 달라지게 만들 수 있습니다.
 
 ```js
 /** @jsx React.createElement */
@@ -216,6 +216,10 @@ export default App;
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+
+## Summary
+
+<!-- 이번 포스팅에는 diffing algorithm을 적용한 뒤 이벤트 등록 과정에서 발생한 문제를 해결하는 과정을 담았습니다. 처음에는 window 전역 객체에 이벤트 리스너를 등록하는 방법을 시도했지만 같은 컴포넌트가 여러 번 사용될 때 상태를 공유하게 되는 문제가 있었습니다. 두 번째로 시도한 방법인 리액트의 이벤트 관리 방식을 본따 루트 요소에 이벤트를 위임하는 것으로 해결할 수 있었습니다. -->
 
 ## Repository
 
