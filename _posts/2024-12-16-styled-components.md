@@ -180,7 +180,7 @@ domElements.forEach(domElement => {
 
 ### (3) 동적 스타일링
 
-앞서 태그드 템플릿을 사용하면 tag function 안에서 표현식으로 전달한 함수를 사용할 수 있다고 했습니다. 이를 이용하면 아래와 같이 표현식으로 함수를 전달하여 props에 따라 스타일이 동적으로 달라지게 만들 수 있습니다.
+앞서 태그드 템플릿을 사용하면 tag function 안에서 표현식으로 전달한 함수를 사용할 수 있다고 했습니다. 이를 이용하면 아래와 같이 표현식으로 함수를 전달하여 props에 따라 스타일이 동적으로 달라지도록 만들 수 있습니다.
 
 <script src="https://gist.github.com/Gyeongsu1997/988944758866b595b9168e728366f359.js?file=dynamic-styling.js"></script>
 
