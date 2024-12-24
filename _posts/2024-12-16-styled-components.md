@@ -191,6 +191,8 @@ domElements.forEach(domElement => {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
+이를 통해 하나의 컴포넌트를 재사용할 수 있습니다.
+
 ## Summary
 
 오늘의 포스팅에서는 스타일드 컴포넌트에서 사용되는 태그드 템플릿이라는 문법에 대해 알아본 뒤 스타일드 컴포넌트를 간단하게 구현해 보았습니다. 하지만 이 게시글에서 구현한 스타일드 컴포넌트는 실제 스타일드 컴포넌트의 동작과는 다릅니다. 실제 스타일드 컴포넌트에서는 인라인 스타일을 사용하지 않고 컴포넌트에 동적으로 생성된 클래스 이름을 부여하며, nesting selector 등 추가적인 기능을 제공합니다. 실제 스타일드 컴포넌트의 동작을 보다 자세히 알고 싶으면 다음 [게시글](https://john015.netlify.app/styled-components%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%A0%EA%B9%8C){:target="_blank"}을 참고하시기 바랍니다.
