@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "바닐라 자바스크립트로 리액트 만들기 - 렌더링 최적화"
+title: "바닐라 자바스크립트로 리액트 만들기 - 렌더링 최적화"
 category: VanillaJS
 tags:
   - JavaScript

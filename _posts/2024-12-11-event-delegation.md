@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "바닐라 자바스크립트로 리액트 만들기 - 이벤트 위임"
+title: "바닐라 자바스크립트로 리액트 만들기 - 이벤트 위임"
 category: VanillaJS
 tags:
   - JavaScript
