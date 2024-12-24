@@ -191,7 +191,7 @@ domElements.forEach(domElement => {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-이를 통해 하나의 컴포넌트를 다양한 스타일로 활용할 수 있으므로 재사용 가능한 컴포넌트를 만들 수 있습니다.
+이를 통해 하나의 컴포넌트를 다양한 스타일로 활용할 수 있습니다.
 
 ## Summary
 
