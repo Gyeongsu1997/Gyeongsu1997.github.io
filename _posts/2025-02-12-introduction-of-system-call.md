@@ -14,9 +14,9 @@ toc: true
 
 ## 2. 시스템 콜의 개념
 
-시스템 콜은 응용 프로그램이 운영체제의 커널이 제공하는 서비스를 요청할 수 있도록 운영체제가 제공하는 인터페이스입니다. 커널이 제공하는 서비스에는 프로세스를 생성하거나 파일에 접근하는 것 등이 있습니다. 아래는 리눅스의 대표적인 시스템 콜인 open, write, close를 사용하는 예시입니다. 코드를 컴파일하고 실행하면 "hello world"라는 문자열이 담긴 파일이 생성됩니다.
+시스템 콜은 응용 프로그램이 운영체제의 커널이 제공하는 서비스를 요청할 수 있도록 운영체제가 제공하는 인터페이스입니다. 커널이 제공하는 서비스에는 프로세스를 생성하거나 파일에 접근하는 것 등이 있습니다. 아래는 리눅스의 대표적인 시스템 콜인 [open](https://man7.org/linux/man-pages/man2/open.2.html){:target="_blank"}, [write](https://man7.org/linux/man-pages/man2/write.2.html){:target="_blank"}, [close](https://man7.org/linux/man-pages/man2/close.2.html){:target="_blank"}를 사용하는 예시입니다. 코드를 컴파일하고 실행하면 "hello world"라는 문자열이 담긴 파일이 생성됩니다.
 
-```C
+```c
 // io.c
 #include <unistd.h>
 #include <fcntl.h>
