@@ -78,12 +78,19 @@ bld 디렉토리에서 **cmake ..**를 입력해 빌드 파일을 생성합니�
 
 ![make]({{site.url}}/images/2025-03-07-mysql-source-installation/make.png)
 
-빌드가 완료되면 **sudo make install** 명령어를 입력해 실행 파일을 설치합니다. 기본 설치 경로는 /usr/local/mysql입니다. 설치 과정에서 필요한 디렉토리를 생성하려면 루트 권한이 필요하므로 앞에 sudo를 붙여 실행합니다.
+빌드가 완료되면 **sudo make install** 명령어를 입력해 빌드된 실행 파일을 설치합니다. 기본 설치 경로는 /usr/local/mysql입니다. 설치 과정에서 필요한 디렉토리를 생성하려면 루트 권한이 필요하므로 앞에 sudo를 붙여 실행합니다.
 
 ![make-install]({{site.url}}/images/2025-03-07-mysql-source-installation/make-install.png)
 
 ### (3) Postinstallation
 
+설치가 끝나면 /usr/local/mysql 디렉토리로 이동해 mysql-files 디렉토리를 생성하고 소유자와 권한을 설정합니다.
+
+![mysql-files]({{site.url}}/images/2025-03-07-mysql-source-installation/mysql-files.png)
+
+/usr/local/mysql/bin 디렉토리에는 mysql 서버와 클라이언트 등의 실행 파일이 위치합니다. 다음으로 mysql 서버를 초기화하기 위해 **sudo ./mysqld --initialize --user=mysql**를 실행하면 root@localhost 계정에 대한 임시 비밀번호가 생성됩니다. 최초로 로그인하기 위해 이 비밀번호를 기억해두어야 합니다.
+
+![initialize]({{site.url}}/images/2025-03-07-mysql-source-installation/initialize.png)
 
 ## Reference
 
