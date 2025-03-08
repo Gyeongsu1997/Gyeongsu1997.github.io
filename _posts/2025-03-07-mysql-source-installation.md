@@ -56,16 +56,9 @@ $> sudo apt install libtirpc-dev
 
 ### (1) Preconfiguration
 
-셸에서 아래 명령어를 입력합니다. groupadd 명령어로 mysql 그룹을 생성한 다음, useradd 명령어로 mysql 시스템 계정을 생성하고 그 계정의 primary group을 앞서 만든 mysql 그룹으로 설정합니다.
+**groupadd** 명령어로 mysql 그룹을 생성한 다음, **useradd** 명령어로 mysql 시스템 계정을 생성하고 그 계정의 primary group을 앞서 만든 mysql 그룹으로 설정합니다. 실행 후 **id mysql**을 입력했을 때의 결과가 아래와 같다면 그룹과 계정이 잘 추가된 것입니다.
 
-```
-$> sudo groupadd mysql
-$> sudo useradd -r -g mysql -s /bin/false mysql
-```
-
-실행 후 ```id mysql```을 입력했을 때의 결과가 아래와 같다면 그룹과 계정이 잘 추가된 것입니다.
-
-![preconfiguration-setup]({{site.url}}/images/2025-03-07-mysql-source-installation/preconfiguration-setup.png)
+![preconfiguration]({{site.url}}/images/2025-03-07-mysql-source-installation/preconfiguration.png)
 
 ### (2) Build and Install
 
@@ -73,14 +66,17 @@ $> sudo useradd -r -g mysql -s /bin/false mysql
 $> tar zxvf mysql-8.4.4.tar.gz
 ```
 
-위 명령어를 입력해 압축 파일의 압축을 해제하면 아래처럼 mysql-8.4.4라는 이름의 디렉토리가 생성됩니다.
+위 명령어를 입력해 압축 파일의 압축을 해제하면 아래처럼 mysql-8.4.4라는 이름의 디렉토리가 만들어집니다.
 
 ![decompressed]({{site.url}}/images/2025-03-07-mysql-source-installation/decompressed.png)
 
-mysql-8.4.4 디렉토리로 들어가서 bld 디렉토리를 만들고 다시 bld 디렉토리로 들어간 다음 cmake로 빌드합니다.
+생성된 mysql-8.4.4 디렉토리로 들어가서 bld 디렉토리를 만들고 다시 bld 디렉토리로 들어간 다음 **cmake ..**을 입력합니다.
 
 ![cmake]({{site.url}}/images/2025-03-07-mysql-source-installation/cmake.png)
 
+cmake 빌드가 완료되면 다시 **make** 명령어를 입력합니다. 빌드 과정이 오래 걸리니 한숨 자고 오시면 됩니다.
+
+![make]({{site.url}}/images/2025-03-07-mysql-source-installation/make.png)
 
 ### (3) Postinstallation
 
