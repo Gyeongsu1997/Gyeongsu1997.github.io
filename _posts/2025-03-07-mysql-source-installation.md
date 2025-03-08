@@ -54,7 +54,7 @@ $> sudo apt install libtirpc-dev
 
 하나씩 해보겠습니다.
 
-### (1) Preconfiguration setup
+### (1) Preconfiguration
 
 셸에서 아래 명령어를 입력합니다. groupadd 명령어로 mysql 그룹을 생성한 다음, useradd 명령어로 mysql 시스템 계정을 생성하고 그 계정의 primary group을 앞서 만든 mysql 그룹으로 설정합니다.
 
@@ -67,7 +67,7 @@ $> sudo useradd -r -g mysql -s /bin/false mysql
 
 ![preconfiguration-setup]({{site.url}}/images/2025-03-07-mysql-source-installation/preconfiguration-setup.png)
 
-### (2) Build and install
+### (2) Build and Install
 
 ```
 $> tar zxvf mysql-8.4.4.tar.gz
@@ -77,18 +77,12 @@ $> tar zxvf mysql-8.4.4.tar.gz
 
 ![decompressed]({{site.url}}/images/2025-03-07-mysql-source-installation/decompressed.png)
 
-아래 명령어를 입력해 mysql-8.4.4 디렉토리로 들어가서 bld 디렉토리를 만들고 다시 bld 디렉토리로 들어간 다음 cmake ..를 입력합니다.
+mysql-8.4.4 디렉토리로 들어가서 bld 디렉토리를 만들고 다시 bld 디렉토리로 들어간 다음 cmake로 빌드합니다.
 
-```
-$> cd mysql-8.4.4
-$> mkdir bld
-$> cd bld
-```
+![cmake]({{site.url}}/images/2025-03-07-mysql-source-installation/cmake.png)
 
 
-
-
-### (3) Postinstallation setup
+### (3) Postinstallation
 
 
 ## Reference
