@@ -66,7 +66,7 @@ $> sudo apt install libtirpc-dev
 $> tar zxvf mysql-8.4.4.tar.gz
 ```
 
-위 명령어를 입력해 압축 파일의 압축을 해제하면 아래처럼 mysql-8.4.4라는 이름의 디렉토리가 만들어집니다. 생성된 디렉토리로 들어가서 bld 디렉토리를 만들고 다시 bld 디렉토리로 들어갑니다.
+위 명령어를 입력해 압축 파일의 압축을 해제하면 mysql-8.4.4라는 이름의 디렉토리가 만들어집니다. 생성된 디렉토리로 들어가서 bld 디렉토리를 만들고 다시 bld 디렉토리로 들어갑니다.
 
 ![decompressed]({{site.url}}/images/2025-03-07-mysql-source-installation/decompressed.png)
 
