@@ -70,7 +70,7 @@ $> tar zxvf mysql-8.4.4.tar.gz
 
 ![decompressed]({{site.url}}/images/2025-03-07-mysql-source-installation/decompressed.png)
 
-**cmake** 명령어로 빌드 파일을 생성합니다.
+bld 디렉토리에서 **cmake ..**를 입력해 빌드 파일을 생성합니다.
 
 ![cmake]({{site.url}}/images/2025-03-07-mysql-source-installation/cmake.png)
 
