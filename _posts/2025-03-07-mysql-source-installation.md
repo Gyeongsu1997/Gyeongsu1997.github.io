@@ -78,7 +78,7 @@ bld 디렉토리에서 **cmake ..**를 입력해 빌드 파일을 생성합니�
 
 ![make]({{site.url}}/images/2025-03-07-mysql-source-installation/make.png)
 
-make install 실행
+빌드가 완료되면 **sudo make install** 명령어를 입력해 실행 파일을 설치합니다. 기본 설치 경로는 /usr/local/mysql입니다. 설치 과정에서 필요한 디렉토리를 생성하려면 루트 권한이 필요하므로 앞에 sudo를 붙여 실행합니다.
 
 ![make-install]({{site.url}}/images/2025-03-07-mysql-source-installation/make-install.png)
 
