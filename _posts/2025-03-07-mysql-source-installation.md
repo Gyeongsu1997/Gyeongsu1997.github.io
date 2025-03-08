@@ -78,6 +78,10 @@ bld 디렉토리에서 **cmake ..**를 입력해 빌드 파일을 생성합니�
 
 ![make]({{site.url}}/images/2025-03-07-mysql-source-installation/make.png)
 
+make install 실행
+
+![make-install]({{site.url}}/images/2025-03-07-mysql-source-installation/make-install.png)
+
 ### (3) Postinstallation
 
 
