@@ -102,7 +102,7 @@ MySQL 서버에 접속하려면 **./mysql -u root -p**를 입력하고 앞서 �
 
 ![mysql-client]({{site.url}}/images/2025-03-07-mysql-source-installation/mysql-client.png)
 
-마지막으로 초기화 과정에서 발급받은 임시 비밀번호 대신 사용할 새 비밀번호를 설정해야 합니다. 이를 위해 아래 SQL문을 실행합니다.
+마지막으로 할 일이 있습니다. 초기화 과정에서 발급받은 임시 비밀번호 대신 사용할 새 비밀번호를 설정하는 것입니다. 이를 위해 아래 SQL문을 실행합니다.
 
 ```
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'root-password';
