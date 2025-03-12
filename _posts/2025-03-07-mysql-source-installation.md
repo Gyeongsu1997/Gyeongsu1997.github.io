@@ -60,7 +60,7 @@ $> sudo apt install libtirpc-dev
 
 ![preconfiguration]({{site.url}}/images/2025-03-07-mysql-source-installation/preconfiguration.png)
 
-### (2) Build and Install
+### (2) Build
 
 앞서 다운로드한 압축 파일이 위치한 경로에서 **tar** 명령어를 이용해 압축을 해제합니다.
 
