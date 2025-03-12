@@ -92,7 +92,7 @@ bld 디렉토리에서 **cmake ..**를 입력해 빌드 파일을 생성합니�
 
 ![initialize]({{site.url}}/images/2025-03-07-mysql-source-installation/initialize.png)
 
-## 4. Starting
+## 4. Starting Server
 
 초기화까지 완료되었다면 **sudo ./mysqld_safe --user=mysql &**를 입력해 MySQL 서버를 실행할 수 있습니다.
 
