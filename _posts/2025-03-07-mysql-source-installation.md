@@ -110,7 +110,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'root-password';
 
 ![alter-password]({{site.url}}/images/2025-03-07-mysql-source-installation/alter-password.png)
 
-앞으로는 방금 설정한 새 비밀번호를 사용해 root@localhost 계정으로 로그인할 수 있습니다. 여기까지 MySQL 서버를 소스 코드로 설치하는 과정을 알아보았습니다.
+앞으로는 위에서 설정한 새 비밀번호를 사용해 root@localhost 계정으로 로그인할 수 있습니다. 이상으로 MySQL 서버를 소스 코드로 설치하는 과정을 알아보았습니다.
 
 ## Reference
 
